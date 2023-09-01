@@ -1,6 +1,7 @@
 import express from "express";
 import { signupRouter } from "./routes/users/auth/signup";
 import cors from 'cors'
+import { loginRouter } from "./routes/users/auth/login";
 
 const app = express()
 
@@ -10,9 +11,10 @@ const corsOptions = {
 };
 
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 
 app.use(signupRouter)
+app.use(loginRouter)
 
 app.listen(8000, () => console.log('listening on port 8000'))
