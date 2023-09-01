@@ -1,0 +1,46 @@
+
+
+:root {
+    --bg-color1: #411700;
+    --bg-color2: #984700;
+    --bg-color3: #ffe0bc;
+
+    --txt-color1:#101010;
+    --txt-color2:#f4f4f4;
+    --txt-color3:#f09558;
+}
+.flex{
+   display: flex;
+   align-items:center;
+}
+
+
+
+.nav_container{
+    height: 100px;
+    width: 100%;
+    background-color: var(--bg-color3) ;
+    /* class flex used */
+    justify-content: space-between;
+    padding: 5px 30px;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}
+
+.navopt_container{
+     /* class flex used */
+}
+.navopt{
+    background-color: var(--bg-color2);
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--txt-color2);
+}
+
+
