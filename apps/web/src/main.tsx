@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import Nav from './components/Nav/Nav.tsx'
 import Signup from './components/auth/Signup.tsx'
