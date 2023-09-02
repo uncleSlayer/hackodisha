@@ -18,10 +18,30 @@ model User {
   phone      String @unique
   hashedPass String
 
-  role Role @default(USER)
+  role    Role      @default(USER)
+  Product Product[]
+}
+
+model Product {
+  id Int @id @unique @default(autoincrement())
+
+  name        String
+  category    ProductCategory
+  price       Int
+  description String
+  quantity    Int
+
+  seller User @relation(fields: [userId], references: [id])
+  userId Int
 }
 
 enum Role {
   VENDOR
   USER
+}
+
+enum ProductCategory {
+  DUMMY
+  DUMMY2
+  DUMMY3
 }

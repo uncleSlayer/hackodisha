@@ -2,6 +2,8 @@ import express from "express";
 import { signupRouter } from "./routes/users/auth/signup";
 import cors from 'cors'
 import { loginRouter } from "./routes/users/auth/login";
+import { productsRouter } from "./routes/vendors/products/upload";
+import cookieParser from "cookie-parser"
 
 const app = express()
 
@@ -12,9 +14,11 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions))
+app.use(cookieParser())
 app.use(express.json())
 
 app.use(signupRouter)
 app.use(loginRouter)
+app.use(productsRouter)
 
 app.listen(8000, () => console.log('listening on port 8000'))

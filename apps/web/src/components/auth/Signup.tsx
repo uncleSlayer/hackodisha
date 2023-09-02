@@ -13,10 +13,10 @@ const Signup = () => {
     const handleChangeRole = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRole(event.target.value)
         console.log(role)
-      }
+    }
 
     const handleSignUpBtn = async (e: MouseEvent) => {
-        
+
         // const phone = signupData.phone
         // const email = signupData.email
         // const name = signupData.name
@@ -29,7 +29,7 @@ const Signup = () => {
 
             {
                 method: 'post',
-                credentials:'include',
+                credentials: 'include',
                 headers: {
                     'Content-type': 'Application/json'
                 },
@@ -69,16 +69,16 @@ const Signup = () => {
                 <br />
 
                 <input type="radio" id="User"
-                onChange={handleChangeRole}
-                name="role" value="USER" />
+                    onChange={handleChangeRole}
+                    name="role" value="USER" />
                 <label htmlFor="user">User</label>
-                <input type="radio" id = "Vendor"
-                onChange={handleChangeRole}
-                name="role" value="VENDOR" />
+                <input type="radio" id="Vendor"
+                    onChange={handleChangeRole}
+                    name="role" value="VENDOR" />
                 <label htmlFor="vendor">Vendor</label>
                 <br />
                 {role && <h2>{role}</h2>}
-    
+
 
                 <button type="submit" onClick={handleSignUpBtn}>Signup</button>
             </form>

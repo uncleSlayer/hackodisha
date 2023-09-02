@@ -3,13 +3,10 @@ import { prisma } from "database"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 
-
-
 export const signupRouter = Router()
 
-// phone, email, naam, password, re enter password
 signupRouter.post('/signup', async (req, res) => {
-    
+
     const signupData = req.body
     console.log(signupData.role)
 
@@ -41,6 +38,7 @@ signupRouter.post('/signup', async (req, res) => {
             })
         })
         .catch((err) => {
+            console.log(err)
             return res.send({
                 error: err
             })
