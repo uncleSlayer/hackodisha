@@ -6,5 +6,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+:root {
+    --bg-color1: #5E503F;
+    --bg-color2: #A9927D;
+
+    --highl-color1: #92374D; 
+     --highl-color2: #0E7C7B; /* #0B6765 */
+
+    --txt-color1:#0A0908;
+    --txt-color2:#F2F4F3;
+    
+}
+.flex{
+   display: flex;
+   align-items:center;
 }
  

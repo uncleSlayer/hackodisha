@@ -5,13 +5,14 @@ import './nav.css'
 const Nav = () => {
     return (
         <div className="nav_container flex">
-            <div className="logo_container ">
-                <img className="logo" src="https://marketplace.canva.com/EAFauoQSZtY/1/0/1600w/canva-brown-mascot-lion-free-logo-qJptouniZ0A.jpg" alt="" />
+            <div className="logo_container flex ">
+                <h1 className="logotxt">H</h1>
+                <img className="logo" src="../../assets/pitcher.png" alt="dd" />
             </div>
             <div className="navopt_container flex">
-                <div className="navopt">home</div>
-                <div className="navopt">about us</div>
-                <div className="navopt">sign up</div>
+                <div className="navopt flex">B</div>
+                <div className="navopt flex">C</div>
+                <div className="navopt flex">U</div>
             </div>
         </div>
     )
