@@ -1,0 +1,7 @@
+
+.search_sec_container{
+    width: 100%;
+    /* remove height prop from here while designing this section*/
+    height: 100px;
+    background: var(--bg-color3);
+}
