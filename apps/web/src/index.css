@@ -23,4 +23,15 @@
    display: flex;
    align-items:center;
 }
+.flexC{
+    display: flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.dividerthin{
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-color1);
+}
  
