@@ -22,17 +22,24 @@
     position:sticky;
     top: 0;
 }
+.fixednav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 
 
 .nav_container{
-    
+    z-index: 101;
     height: 80px;
     width: 100%;
     background-color: var(--bg-color2) ;
+    /* sticky class used */
+    
     /* class flex used */
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 20px 60px;
 
 }
 

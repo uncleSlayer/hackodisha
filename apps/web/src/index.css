@@ -28,6 +28,9 @@
     align-items:center;
     flex-direction:column;
 }
+.z_20{
+    z-index: 20;
+}
 
 .dividerthin{
     height: 10px;

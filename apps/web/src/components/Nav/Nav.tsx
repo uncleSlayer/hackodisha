@@ -8,10 +8,10 @@ import Carousel from '../../assets/carousel.png'
 
 const Nav = () => {
     return (
-        <div className="flexC sticky">
+        <div className="flexC sticky z_20">
             <div className="nav_container flex">
                 <div className="logo_container flex ">
-                    <h1 className="logotxt">H</h1>
+                    <h1 className="logotxt">H</h1>  {/*handy pots.co */}
                     <img className="logo" src={Logo} alt="dd" />
                     <h1 className="logotxt">.</h1>
                 </div>
