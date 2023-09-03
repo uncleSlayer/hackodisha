@@ -2,18 +2,13 @@ import { prisma } from "database";
 import { Router } from "express";
 import jwt from "jsonwebtoken"
 import { productUploadValidator } from "zod-types";
+import { productUploadType } from "type-checks"
 
 export const productsRouter = Router()
 
 productsRouter.post('/product/upload', async (req, res) => {
 
-    const productInfo: {
-        name: string,
-        category: 'DUMMY' | 'DUMMY2' | 'DUMMY3',
-        price: number,
-        description: string,
-        quantity: number
-    } = req.body.productData
+    const productInfo: productUploadType = req.body.productData
 
     const productUploadValidated = productUploadValidator.safeParse(productInfo)
 
@@ -23,16 +18,7 @@ productsRouter.post('/product/upload', async (req, res) => {
         })
     }
 
-    // const productInfo: {
-    //     name: string,
-    //     category: 'DUMMY' | 'DUMMY2' | 'DUMMY3',
-    //     price: number,
-    //     description: string,
-    //     quantity: number
-    // } = req.body.productData
-
     const token = req.cookies.token
-    console.log(token)
 
     const email = jwt.verify(token, 'hsdfsifshf')
 

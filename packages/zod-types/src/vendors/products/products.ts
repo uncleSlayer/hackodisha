@@ -1,16 +1,9 @@
 import { z } from "zod"
-
-// const productInfo: {
-//         name: string,
-//         category: 'DUMMY' | 'DUMMY2' | 'DUMMY3',
-//         price: number,
-//         description: string,
-//         quantity: number
-//     } = req.body.productData
+import { ProductCategory } from "@prisma/client"
 
 export const productUploadValidator = z.object({
     name: z.string(),
-    category: z.string(),
+    category: z.nativeEnum(ProductCategory),
     price: z.number(),
     description: z.string(),
     quantity: z.number()

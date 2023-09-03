@@ -25,6 +25,7 @@
     "database": "*",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "zod-types": "*"
+    "zod-types": "*",
+    "type-checks": "*"
   }
 }
