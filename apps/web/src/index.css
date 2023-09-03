@@ -23,4 +23,18 @@
    display: flex;
    align-items:center;
 }
+.flexC{
+    display: flex;
+    align-items:center;
+    flex-direction:column;
+}
+.z_20{
+    z-index: 20;
+}
+
+.dividerthin{
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-color1);
+}
  

@@ -2,6 +2,8 @@ import { useState } from "react"
 import { MouseEvent } from "react"
 import { useNavigate } from "react-router-dom"
 
+import './auth.css'
+
 
 const Login = () => {
 
