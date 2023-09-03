@@ -18,13 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter >
       <Nav />
-      <Hero />
-      <Search />
-      <Catalogue />
+      
       <Routes>
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/' element={<h1>home</h1>} />
+        <Route path='/' element={<div><Hero /><Search /><Catalogue /></div>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
