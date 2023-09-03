@@ -7,11 +7,12 @@ import Nav from './components/Nav/Nav.tsx'
 import Hero from './components/Hero/Hero.tsx'
 import Search from './components/Search/Search.tsx'
 import Catalogue from './components/Catalogue/Catalogue.tsx'
-
+import Login from './components/auth/Login.tsx'
 import Signup from './components/auth/Signup.tsx'
+
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
-import Login from './components/auth/Login.tsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

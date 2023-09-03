@@ -1,20 +1,57 @@
 .hero_container{
     width: 100%;
-    height: 90vh;
-    /* height: 90vh; remove 100vh when working with this section */
     background: var(--bg-color1);
+    /*newcode*/
+    /* height: 110vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px; */
+    /*newcode*/
     
 }
 
 
+.absolute{
+    position: absolute;
+}
+.dividerthin_V{
+    height: 60vh;
+    width: 2px;
+    background-color: var(--txt-color2);
+    margin: 0 40px 0  0;
+}
+.dividerthick_H{
+    width: 100%;
+    height: 30px;
+    background: rgb(62,53,42);
+    background: linear-gradient(70deg, rgba(62,53,42,1) 15%, rgba(169,146,125,1) 94%, rgb(184, 157, 132) 100%);
+}
+
+
+/*newcode*/
+/* .relative{
+    position:relative;
+    height: 30vh;
+    transform-style: preserve-3d;
+    z-index:19;
+} */
+/*newcode*/
+
 .section1{
     width: 100%;
-    height: 45vh;
+    height: 30vh;
     background: var(--bg-color2);
+
+/*newcode*/
+    /* position: absolute;
+    transform: translateZ(-5) scale(1.5); */
+/*newcode*/
+
     /* flex class used */
     flex-direction: column;
     justify-content: center;
 }
+
 .section1 .header{
     font-size:2.5rem;
     font-weight:600;
@@ -29,4 +66,52 @@
     font-weight:300;
     margin:15px 0 ;
 
+}
+
+
+
+.section2{
+   
+    height: 70vh;
+    width: 100%;
+    
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(../../assets/herobanner.jpg);  
+    background-size: cover;
+    padding: 40px 50px 30px 50px;
+    
+}
+.banertxt_container{
+    /* flex applied */
+    align-items: flex-start;
+    justify-content: center;
+}
+.banertxt_subcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+}
+
+.header2{
+    
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--bg-color2);
+    text-align: left;
+    margin: 5px 0;
+}
+
+.subtext2{
+    
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    text-align: left;
+    color: var(--txt-color2);
 }

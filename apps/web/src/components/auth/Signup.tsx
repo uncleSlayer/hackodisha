@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { MouseEvent } from "react"
 
+import './auth.css'
+
 const Signup = () => {
 
     const [name, setName] = useState('')
@@ -50,8 +52,9 @@ const Signup = () => {
 
     // phone, email, naam, password, re enter password  
     return (
-        <div className="mt-10">
-            <form action="">
+        <div className="wraper">
+
+            <form className="sectionL" action="">
                 <p>name</p>
                 <input type="text" className="border" value={name} onChange={(e) => setName(e.target.value)} />
 
@@ -67,21 +70,24 @@ const Signup = () => {
                 <p>re enter pas</p>
                 <input type="text" className="border" value={rePass} onChange={(e) => setRePass(e.target.value)} />
                 <br />
-
-                <input type="radio" id="User"
-                    onChange={handleChangeRole}
-                    name="role" value="USER" />
-                <label htmlFor="user">User</label>
-                <input type="radio" id="Vendor"
-                    onChange={handleChangeRole}
-                    name="role" value="VENDOR" />
-                <label htmlFor="vendor">Vendor</label>
-                <br />
-                {role && <h2>{role}</h2>}
+                <div className="radiobtn">
+                    <input type="radio" id="User"
+                        onChange={handleChangeRole}
+                        name="role" value="USER" />
+                    <label htmlFor="user">User</label>
+                    <input type="radio" id="Vendor"
+                        onChange={handleChangeRole}
+                        name="role" value="VENDOR" />
+                    <label htmlFor="vendor">Vendor</label>
+                </div>
+                
+                
+                {role && <h2>{role}</h2>} {/* explain ~sam */}
 
 
                 <button type="submit" onClick={handleSignUpBtn}>Signup</button>
             </form>
+            <div className="sectionR"></div>
         </div>
     )
 }
