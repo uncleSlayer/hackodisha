@@ -5,7 +5,9 @@ import './catalog.css'
 
 const Catalogue = () => {
   return (
-    <div className="catalog_container">Catalog</div>
+    <div className="catalog_container">
+      Catalog
+    </div>
   )
 }
 

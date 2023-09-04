@@ -1,9 +1,9 @@
 import React from 'react'
 
-const usercart = () => {
+const Usercart = () => {
   return (
     <div>usercart</div>
   )
 }
 
-export default usercart
+export default Usercart
