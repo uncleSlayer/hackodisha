@@ -9,21 +9,22 @@ import Search from './components/Search/Search.tsx'
 import Catalogue from './components/Catalogue/Catalogue.tsx'
 import Login from './components/auth/Login.tsx'
 import Signup from './components/auth/Signup.tsx'
+import { RecoilRoot } from "recoil"
 
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+
+  <RecoilRoot>
     <BrowserRouter >
       <Nav />
-      
       <Routes>
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<div><Hero /><Search /><Catalogue /></div>} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </RecoilRoot>,
 )

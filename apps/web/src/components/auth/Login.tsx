@@ -1,16 +1,16 @@
 import { useState } from "react"
 import { MouseEvent } from "react"
 import { useNavigate } from "react-router-dom"
-
+import { loggedUser } from "store"
+import { useRecoilState } from "recoil"
 import './auth.css'
-
 
 const Login = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const navigate = useNavigate()
-
+    const [loggedUserState, setLoggedUser] = useRecoilState(loggedUser)
 
     const handleLoginBtn = (e: MouseEvent) => {
         e.preventDefault()
@@ -34,6 +34,7 @@ const Login = () => {
             })
             .then((resp) => {
                 console.log(resp);
+                setLoggedUser(resp.email)
                 navigate('/')
             })
 

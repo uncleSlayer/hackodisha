@@ -46,7 +46,7 @@ loginRouter.post('/login', async (req, res) => {
                     })
 
                     return res.send({
-                        messsage: 'user logged in succesfully'
+                        email: user.email
                     })
                 }
             )
