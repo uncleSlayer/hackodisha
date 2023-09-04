@@ -27,11 +27,11 @@ const Nav = () => {
                                 <img className="navopt_img" src={Carousel} alt="dd" />
                             </div>
                         </Link>
-                        <div className="navopt flex">
-                            <Link to="/cart">
-                                <img className="navopt_img" src={Cart} alt="dd" />
-                            </Link>
-                        </div>
+                        <Link to="/cart">
+                            <div className="navopt flex">
+                                    <img className="navopt_img" src={Cart} alt="dd" />                              
+                            </div>
+                        </Link>
                         <div className="navopt flex">
                             <Link to="/signup">
                                 <img className="navopt_img" src={User} alt="dd" />
