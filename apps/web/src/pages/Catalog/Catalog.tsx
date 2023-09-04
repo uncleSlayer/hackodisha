@@ -1,11 +1,11 @@
 import React from 'react'
 
 import '../../index.css'
-import './catalogues.css'
+import './catalog.css'
 
 const Catalogue = () => {
   return (
-    <div className="catalogue_container">Catalogue</div>
+    <div className="catalog_container">Catalog</div>
   )
 }
 
