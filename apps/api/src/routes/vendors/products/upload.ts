@@ -3,6 +3,7 @@ import { Router } from "express";
 import jwt from "jsonwebtoken"
 import { productUploadValidator } from "zod-types";
 import { productUploadType } from "type-checks"
+import { uploadObjUrl } from "s3"
 
 export const productsRouter = Router()
 
@@ -34,6 +35,8 @@ productsRouter.post('/product/upload', async (req, res) => {
         })
     }
 
+    const uploadResp = await uploadObjUrl(`${productInfo.name.split(' ').join('')}.jpg`, 'image/jpg')
+
     const product = await prisma.product.create({
         data: {
             name: productInfo.name,
@@ -41,11 +44,13 @@ productsRouter.post('/product/upload', async (req, res) => {
             description: productInfo.description,
             price: productInfo.price,
             quantity: productInfo.quantity,
+            imageUrl: productInfo.name.split(' ').join(''),
             userId: loggedUser.id
         }
     })
 
     return res.send({
-        message: 'hello'
+        message: 'hello',
+        url: uploadResp
     })
 })
