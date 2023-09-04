@@ -1,0 +1,7 @@
+.catalog_container{
+    width: 100%;
+    height: 50vh;
+    /* height: 90vh; remove 100vh when working with this section */
+    background: var(--bg-color1);
+
+}
