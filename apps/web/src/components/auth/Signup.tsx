@@ -1,6 +1,11 @@
+
+
 import { useState } from "react"
 import { MouseEvent } from "react"
+import {Link} from 'react-router-dom';
 
+
+import '../../index.css'
 import './auth.css'
 
 const Signup = () => {
@@ -50,6 +55,7 @@ const Signup = () => {
 
     }
 
+
     // phone, email, naam, password, re enter password  
     return (
         <div className="wraper">
@@ -82,10 +88,15 @@ const Signup = () => {
                 </div>
                 
                 
-                {role && <h2>{role}</h2>} {/* explain ~sam */}
+                {/*  {role && <h2>{role}</h2>} explained ~sam */} 
 
 
                 <button type="submit" onClick={handleSignUpBtn}>Signup</button>
+
+                <Link to="/login">
+                    <button >Log in</button>
+                </Link>
+                
             </form>
             <div className="sectionR"></div>
         </div>
