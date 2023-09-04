@@ -27,6 +27,7 @@
     "jsonwebtoken": "^9.0.2",
     "zod-types": "*",
     "type-checks": "*",
-    "s3": "*"
+    "s3": "*",
+    "config": "*"
   }
 }
