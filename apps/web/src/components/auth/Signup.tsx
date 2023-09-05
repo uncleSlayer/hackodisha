@@ -98,7 +98,9 @@ const Signup = () => {
                 </Link>
                 
             </form>
-            <div className="sectionR"></div>
+            <div className="sectionR">
+            
+            </div>
         </div>
     )
 }

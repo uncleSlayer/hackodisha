@@ -1,7 +1,6 @@
-.catalog_container{
+.carousel_container{
     width: 100%;
-    height: 50vh;
-    /* height: 90vh; remove 100vh when working with this section */
-    background: var(--bg-color1);
+    height: 100vh;
+    background: #fff1c6;
 
 }

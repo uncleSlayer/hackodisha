@@ -30,19 +30,24 @@ const Nav = () => {
 
                     <Link to="/catalog">
                         <div className="navopt flex">
+                            <div className="pretext">Catalog</div>
                             <img className="navopt_img" src={Carousel} alt="dd" />
                         </div>
                     </Link>
                     <Link to="/cart">
                         <div className="navopt flex">
+                            <div className="pretext">Cart</div>
                             <img className="navopt_img" src={Cart} alt="dd" />
                         </div>
                     </Link>
+                    <Link to="/signup">
                     <div className="navopt flex">
-                        <Link to="/signup">
+                        
+                            <div className="pretext">profile</div>
                             <img className="navopt_img" src={User} alt="dd" />
-                        </Link>
+                        
                     </div>
+                    </Link>
 
 
                 </div>
