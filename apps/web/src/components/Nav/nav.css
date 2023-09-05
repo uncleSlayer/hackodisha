@@ -1,22 +1,16 @@
 
 
-:root {
-    --bg-color1: #5E503F;
-    --bg-color2: #A9927D;
-    --highl-color1: #22333B;
-    --txt-color1:#0A0908;
-    --txt-color2:#F2F4F3;
-    
-}
+
 .flex{
    display: flex;
    align-items:center;
 }
 
 .dividerthin{
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: var(--bg-color1);
+    opacity: 0.9;
+    background-color: var(--bg-color2);
 }
 .sticky{
     position:sticky;
@@ -34,7 +28,7 @@
     z-index: 101;
     height: 10vh;
     width: 100%;
-    background-color: var(--bg-color2) ;
+    background-color: var(--bg-color1) ;
     /* sticky class used */
     
     /* class flex used */
@@ -44,6 +38,7 @@
 }
 
 .logo{
+
     margin: 0 -6px;
     height: 50px;
     width: 50px;
@@ -53,24 +48,56 @@
     font-size:4rem;
     font-weight: 900;
     font-style: italic;
-    color: var(--bg-color1);
+    color: var(--bg-color2);
+    text-decoration: none;
 }
-
+.logo_container{
+    
+}
 .navopt_container{
      /* class flex used */
 }
 .navopt{
-    background-color: var(--bg-color1);
+    background-color: var(--bg-color2);
     width: 50px;
     height: 50px;
     padding: 10px 10px;
     margin: 0 10px;
-    font-size: 2rem;
+    position: relative;
     border-radius: 50%;
-    font-weight: 900;
+ 
     color: var(--txt-color2);
     /* flex applied */
+    /* overflow-x: hidden; */
     justify-content: center;
+    transition: all 0.6s ease  ;
+}
+.navopt:hover{
+    width: 55px;
+    height: 55px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.898) 0px 20px 30px -10px;
+    
+}
+.pretext{
+    font-size:1rem;
+    font-weight: 300;
+    position: absolute;
+    top: 109%;
+    z-index: -1;
+    border-radius:6px;
+    background-color: var(--txt-color2);
+    padding: 2px 7px;
+    color: #5E503F;
+    opacity: 0;
+    transition: all 0.4s ease;
+   
+
+}
+.navopt:hover .pretext{
+    z-index: 11;
+    
+    opacity: 0.80;
 }
 .navopt_img{
     height: 30px;
