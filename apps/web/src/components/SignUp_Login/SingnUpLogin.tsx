@@ -16,7 +16,9 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+
     const navigate = useNavigate()
+
     const [loggedUserState, setLoggedUser] = useRecoilState(loggedUser)
 
     const handleLoginBtn = (e: MouseEvent) => {
@@ -46,6 +48,9 @@ const Login = () => {
             })
 
     }
+
+
+    
     const [name, setName] = useState('')
     const [Email, setmail] = useState('')
     const [phone, setPhone] = useState('')
