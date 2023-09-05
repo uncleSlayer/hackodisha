@@ -9,7 +9,7 @@ import '../../index.css'
 import './auth.css'
 
 
-const Login = () => {
+const login = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
@@ -64,4 +64,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default login
