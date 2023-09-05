@@ -35,6 +35,7 @@ productsRouter.post('/product/upload', async (req, res) => {
         })
     }
 
+    const urlHeader = "https://hackodhisa.s3.ap-south-1.amazonaws.com/products/"
     const uploadResp = await uploadObjUrl(`${productInfo.name.split(' ').join('')}.jpg`, 'image/jpg')
 
     const product = await prisma.product.create({
@@ -44,7 +45,7 @@ productsRouter.post('/product/upload', async (req, res) => {
             description: productInfo.description,
             price: productInfo.price,
             quantity: productInfo.quantity,
-            imageUrl: productInfo.name.split(' ').join(''),
+            imageUrl: urlHeader + productInfo.name.split(' ').join('') + ".jpg",
             userId: loggedUser.id
         }
     })
