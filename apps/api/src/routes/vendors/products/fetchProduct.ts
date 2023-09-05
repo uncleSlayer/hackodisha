@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { prisma } from "database";
 import { ProductCategory } from "@prisma/client"
+import { array } from "zod";
 
 
 export const productRouter = Router()
@@ -36,10 +37,9 @@ productRouter.post('/products/all/:category', async (req, res) => {
         take: 10
     })
 
-    console.log(products)
-
     return res.send({
-        message: 'lo bhai products'
+        message: 'lo bhai products',
+        products:products
     })
 
 })

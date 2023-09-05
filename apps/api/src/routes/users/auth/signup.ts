@@ -17,7 +17,6 @@ signupRouter.post('/signup', async (req, res) => {
     const rePass = signupData.rePass
     const role = signupData.role
 
-    console.log(role)
 
     if (pass !== rePass) {
         return res.send({
