@@ -5,3 +5,13 @@
     background: var(--bg-color1);
 
 }
+
+.categories{
+    display:flex;
+    flex-wrap:wrap
+}
+
+.category{
+    width:25%;
+    height:100px
+}
