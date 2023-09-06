@@ -22,7 +22,9 @@
   "dependencies": {
     "@prisma/client": "^5.2.0",
     "@types/jsonwebtoken": "^9.0.2",
+    "react-hot-toast": "^2.4.1",
     "recoil": "^0.7.7",
+    "store": "^1.0.0",
     "zod": "^3.22.2"
   }
 }
