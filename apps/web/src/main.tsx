@@ -15,6 +15,7 @@ import { RecoilRoot } from "recoil"
 
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
+import UploadProduct from './components/vendor/UploadProduct.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/Catalog' element={<Catalog />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/upload' element={<UploadProduct />} />
       </Routes>
     </BrowserRouter>
   </RecoilRoot>,

@@ -4,7 +4,7 @@ import Select from "react-select"
 
 const UploadProduct = () => {
     const [productName, setProductName] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState('Other')
     const [desc, setDesc] = useState('')
     const [price, setPrice] = useState<number>(0)
     const [quantity, setQuantity] = useState<number>(1)
@@ -23,6 +23,7 @@ const UploadProduct = () => {
             "quantity": quantity
         }
         var productdataJSON = JSON.stringify(productData);
+        console.log(productdataJSON)
 
         e.preventDefault()
 
@@ -50,9 +51,31 @@ const UploadProduct = () => {
 
                 <p>Select a Category</p>
                 <select value={category} onChange={handleCategory}>
-                    <option value="DUMMY">DUMMY</option>
-                    <option value="DUMMY2">DUMMY2</option>
-                    <option value="DUMMY3">DUMMY3</option>
+                    <option value="Other">Other</option>
+                    <option value="Sambalpuri_Saree">Sambalpuri_Saree</option>
+                    <option value="Banarasi_Saree">Banarasi_Saree</option>
+                    <option value="Silk_Saree">Silk_Saree</option>
+                    <option value="Kashmiri_Saree">Kashmiri_Saree</option>
+                    <option value="Pashmina_Shawl">Pashmina_Shawl</option>
+                    <option value="Khadi">Khadi</option>
+                    <option value="Cotton">Cotton</option>
+                    <option value="Silk_rug">Silk_rug</option>
+                    <option value="Cotton_rug">Cotton_rug</option>
+                    <option value="Other_rug">Other_rug</option>
+                    <option value="Porcelain_HomeDecor">Porcelain_HomeDecor</option>
+                    <option value="Metal_HomeDecor">Metal_HomeDecor</option>
+                    <option value="Wooden_HomeDecor">Wooden_HomeDecor</option>
+                    <option value="Other_HomeDecor">Other_HomeDecor</option>
+                    <option value="Porcelain_Sculptures">Porcelain_Sculptures</option>
+                    <option value="Metal_Sculptures">Metal_Sculptures</option>
+                    <option value="Wooden_Sculptures">Wooden_Sculptures</option>
+                    <option value="Other_Sculptures">Other_Sculptures</option>
+                    <option value="Jewellery">Jewellery</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Utensils">Utensils</option>
+                    <option value="Pottery">Pottery</option>
+
+ 
                 </select>
 
                 <p>Price</p>

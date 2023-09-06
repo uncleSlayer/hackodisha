@@ -56,7 +56,27 @@ enum Role {
 }
 
 enum ProductCategory {
-  DUMMY
-  DUMMY2
-  DUMMY3
+  Other
+  Sambalpuri_Saree
+  Banarasi_Saree
+  Silk_Saree
+  Kashmiri_Saree
+  Pashmina_Shawl
+  Khadi
+  Cotton
+  Silk_rug
+  Cotton_rug
+  Other_rug
+  Porcelain_HomeDecor
+  Metal_HomeDecor
+  Wooden_HomeDecor
+  Other_HomeDecor
+  Porcelain_Sculptures
+  Metal_Sculptures
+  Wooden_Sculptures
+  Other_Sculptures
+  Jewellery
+  Accessories
+  Utensils
+  Pottery
 }
