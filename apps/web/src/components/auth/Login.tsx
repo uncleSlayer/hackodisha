@@ -38,7 +38,7 @@ const login = () => {
             })
             .then((resp) => {
                 console.log(resp);
-                setLoggedUser(resp.email)
+                setLoggedUser({email : resp.email})
                 navigate('/')
             })
 
