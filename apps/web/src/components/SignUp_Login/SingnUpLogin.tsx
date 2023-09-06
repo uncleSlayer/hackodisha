@@ -4,8 +4,8 @@ import { MouseEvent } from "react"
 import { useNavigate } from "react-router-dom"
 import { loggedUser } from "store"
 import { useRecoilState } from "recoil"
-import { Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+
+
 
 import './Cstyle.css'
 import LoginLogo from './login.jpg'
@@ -115,7 +115,7 @@ console.log(resp.json())
             <input type="text" placeholder="Email"  value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Password" value={pass} onChange={(e) => setPass(e.target.value)}/>
             <input type="submit" onClick={handleLoginBtn} value="Login"/>
-            <p className="signup">don't have an account? <a href="#" onClick={toggle} >Sign up.</a></p>
+            <p className="signup">don't have an account? <span  onClick={toggle} >Sign up.</span></p>
             </form>
             </div>
             </div>
@@ -142,7 +142,7 @@ console.log(resp.json())
                         name="role" value="VENDOR" /></label>
             </div>
             <input type="submit" onClick={handleSignUpBtn} value="SignUp"/>
-            <p className="signup">already have an account? <a href="#" onClick={toggle}>Sign in.</a></p>
+            <p className="signup">already have an account? <span onClick={toggle}>Sign in.</span></p>
             </form>
             </div>
             <div className="imgBx"><img src={SignupLogo}/></div>

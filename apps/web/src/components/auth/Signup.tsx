@@ -93,7 +93,7 @@ const Signup = () => {
 
                 <button type="submit" onClick={handleSignUpBtn}>Signup</button>
 
-                <Link to="/login">
+                <Link to="/auth">
                     <button >Log in</button>
                 </Link>
                 

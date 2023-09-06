@@ -42,7 +42,7 @@ const Nav = () => {
                             <img className="navopt_img" src={Cart} alt="dd" />
                         </div>
                     </Link>
-                    <Link to="/signup">
+                    <Link to="/auth">
                     <div className="navopt flex">
                         
                             <div className="pretext">profile</div>
