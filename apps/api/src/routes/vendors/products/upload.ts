@@ -12,8 +12,9 @@ productsRouter.post('/product/upload', async (req, res) => {
     const productInfo: productUploadType = req.body.productData
 
     const productUploadValidated = productUploadValidator.safeParse(productInfo)
-
+ 
     if (!productUploadValidated.success) {
+       
         return res.send({
             error: productUploadValidated.error
         })
@@ -23,20 +24,26 @@ productsRouter.post('/product/upload', async (req, res) => {
 
     const email = jwt.verify(token, 'hsdfsifshf')
 
+    console.log("upar")
+
     const loggedUser = await prisma.user.findFirst({
         where: {
             email: email.toString()
         }
     })
+    console.log(loggedUser)
 
     if (loggedUser?.role !== 'VENDOR') {
         return res.send({
             error: 'user is not a vendor'
         })
     }
-
+    console.log("upar")
+    const urlHeader = "https://hackodhisa.s3.ap-south-1.amazonaws.com/products/"
     const uploadResp = await uploadObjUrl(`${productInfo.name.split(' ').join('')}.jpg`, 'image/jpg')
+    console.log("upbmbar")
 
+   try {
     const product = await prisma.product.create({
         data: {
             name: productInfo.name,
@@ -44,10 +51,15 @@ productsRouter.post('/product/upload', async (req, res) => {
             description: productInfo.description,
             price: productInfo.price,
             quantity: productInfo.quantity,
-            imageUrl: productInfo.name.split(' ').join(''),
+            imageUrl: urlHeader + productInfo.name.split(' ').join('') + ".jpg",
             userId: loggedUser.id
         }
     })
+    
+   } catch (error) {
+        console.log(error)
+   }
+    
 
     return res.send({
         message: 'hello',

@@ -6,7 +6,10 @@ import { prisma } from "database";
 export const cartRouter = Router()
 
 cartRouter.post('/cart', async (req, res) => {
-    const productId: number = req.body.cartInfo
+
+    const productId: number = req.body.id
+    const quantity:number = req.body.quantity
+
 
     const token = req.cookies.token
     const email = JWT.verify(token, JWT_SECRET)
@@ -50,7 +53,10 @@ cartRouter.post('/cart', async (req, res) => {
     const cartItem = await prisma.cartItem.create({
         data: {
             userId: user.id,
-            productId: product.id
+            productId: product.id,
+
+            quantity: quantity
+
         }
     })
 
