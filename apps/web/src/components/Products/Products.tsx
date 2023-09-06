@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { SERVER_IP } from 'configs'
 import Product from './Product';
-
+import { useParams } from "react-router-dom";
 
 
 
 const Products: React.FC = () => {
+    const { category } = useParams();
 
     const [lastItem,setLastItem] = useState(7)
     const [hasMore, setHasMore] = useState(true)
@@ -22,7 +23,7 @@ const Products: React.FC = () => {
         userId: number,
     }[]>([])
     const fetchData = () => {
-        fetch(SERVER_IP + "products/all/DUMMY",
+        fetch(SERVER_IP + "products/all/"+category,
             {
                 method: 'post',
                 credentials: 'include',
