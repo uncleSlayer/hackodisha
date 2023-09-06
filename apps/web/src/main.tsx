@@ -9,11 +9,13 @@ import Cart from './pages/Cart/cart.tsx'
 import Catalog from './pages/Catalog/Catalog.tsx'
 import Login from './components/auth/Login.tsx'
 import Signup from './components/auth/Signup.tsx'
+import Products from './components/Products/Products.tsx'
 import { RecoilRoot } from "recoil"
 
 
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
+import UploadProduct from './components/vendor/UploadProduct.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -24,9 +26,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<div><Home /></div>} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/Products' element={<Products />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Catalog' element={<Catalog />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/upload' element={<UploadProduct />} />
       </Routes>
     </BrowserRouter>
   </RecoilRoot>,
