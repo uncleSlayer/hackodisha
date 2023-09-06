@@ -13,20 +13,20 @@ productRouter.post('/products/all/:category', async (req, res) => {
     let cat;
 
 //     import { ProductCategory } from "@prisma/client";
-// const categories = Object.values(ProductCategory); // returns an array of strings
+    const categories = Object.values(ProductCategory); // returns an array of strings
 
     switch (category) {
 
         case 'DUMMY':
-            cat = ProductCategory.DUMMY
+            cat = ProductCategory.Jewellery
             break;
 
         case 'DUMMY2':
-            cat = ProductCategory.DUMMY2
+            cat = ProductCategory.Jewellery
             break;
 
         case 'DUMMY3':
-            cat = ProductCategory.DUMMY3
+            cat = ProductCategory.Jewellery
             break;
     }
 

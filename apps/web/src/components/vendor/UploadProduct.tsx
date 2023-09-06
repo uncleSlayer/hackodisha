@@ -15,14 +15,17 @@ const UploadProduct = () => {
 
     const handleProdUploadBtn = async (e: MouseEvent) => {
 
-        var productData = {
-            "name": price,
-            "category": category,
-            "price": price,
-            "description": desc,
-            "quantity": quantity
+        let postData = {
+            productData:{  
+                "name": productName,
+                "category": category,
+                "price": price,
+                "description": desc,
+                "quantity": quantity
+            }
         }
-        var productdataJSON = JSON.stringify(productData);
+          
+        let productdataJSON = JSON.stringify(postData);
         console.log(productdataJSON)
 
         e.preventDefault()
