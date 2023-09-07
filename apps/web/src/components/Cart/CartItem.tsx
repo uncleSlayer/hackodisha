@@ -1,19 +1,21 @@
 import React from 'react'
 
-type Cart= {
-  id :number
-  userId   :number
-  productId  :number
-  quantity :number 
-  }
+type Cart = {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  productId: number;
+}
 
-const Cart:React.FC<Cart> = ({id,userId,productId, quantity}) => {
+const Cart: React.FC<Cart> = ({ id, name, productId, quantity, price }) => {
   return (
     <div>
-        <div>{id}</div>
-        <div>{userId}</div>
-        <div>{productId}</div>
-        <div>{quantity}</div>
+      <div>{id}</div>
+      <div>{name}</div>
+      <div>{price}</div>
+      <div>{quantity}</div>
+      <div>{productId}</div>
     </div>
   )
 }

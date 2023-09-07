@@ -1,25 +1,67 @@
 import { Router } from "express";
 import JWT from "jsonwebtoken";
 import { JWT_SECRET } from "configs"
-import { CartItem } from "@prisma/client";
 import { prisma } from "database";
+import { log } from "console";
 
 export const fetchCart = Router()
 
-fetchCart.post('/fetchcarts',async(req,res)=>{
-    const cartItems = await prisma.cartItem.findMany({
-        where:{
-            status: "ALIVE"
+fetchCart.post('/fetchcarts', async (req, res) => {
+    const token = req.cookies.token
+    const userEmail = JWT.verify(token, JWT_SECRET)
+
+    const user = await prisma.user.findFirst({
+        where: {
+            email: userEmail.toString()
         }
     })
-    if(!cartItems){
+
+    const cartItems = await prisma.cartItem.findMany({
+        where: {
+            status: "ALIVE",
+            userId: user?.id
+        }
+    })
+
+    if (!cartItems) {
         return res.send({
             error: "Unndefined cartItem"
         })
     }
+
+    const sendUserArr: {
+        id: number,
+        name: string,
+        price: number,
+        quantity: number,
+        productId: number
+    }[] = []
+
+    await Promise.all(cartItems.map(async (item) => {
+        const product = await prisma.product.findFirst({ where: { id: item.productId } })
+        if (!product) {
+            return
+        }
+
+        const sendUser = {
+            id: 0,
+            name: '',
+            price: 0,
+            quantity: 0,
+            productId: 0
+        }
+
+        sendUser.id = item.id
+        sendUser.name = product.name
+        sendUser.price = item.price
+        sendUser.productId = item.productId
+        sendUser.quantity = item.quantity
+        sendUserArr.push(sendUser)
+    }))
+
     return res.send({
         message: "Ye lo carItems",
-        shoppingCart: cartItems
+        shoppingCart: sendUserArr
     })
 })
 

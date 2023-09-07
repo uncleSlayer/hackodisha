@@ -15,6 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
 import UploadProduct from './components/vendor/UploadProduct.tsx'
 import Vendor from './components/vendor/Vendor.tsx'
+import Your_Cart from './components/Cart/Your_Cart.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -30,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
         <Route path='/auth' element={<Login />} />
         <Route path='/Catalog' element={<Catalog />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<Your_Cart />} />
         <Route path='/upload' element={<UploadProduct />} />
         <Route path='/vendor' element={<Vendor />} />
       </Routes>
