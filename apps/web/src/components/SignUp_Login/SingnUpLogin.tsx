@@ -106,6 +106,7 @@ const Login = () => {
 ).then((resp)=>{
     console.log(resp.json())
     alert("You have signed in successfully. Please Login!!")
+    toggle()
     navigate('/auth')
     
 }).catch((err)=>{
