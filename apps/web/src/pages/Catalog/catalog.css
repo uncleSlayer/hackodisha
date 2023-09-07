@@ -7,11 +7,17 @@
 }
 
 .categories{
+   
     display:flex;
-    flex-wrap:wrap
+
+
+
+    /* to be worked from here ~ samyak mishra */
+   /* /cwjkqlfeifoefjpw */
 }
 
 .category{
+    background: red;
     width:25%;
     height:100px
 }
