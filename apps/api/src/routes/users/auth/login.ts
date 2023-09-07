@@ -26,6 +26,12 @@ loginRouter.post('/login', async (req, res) => {
 
     bcrypt.compare(pass, user.hashedPass)
         .then((resp) => {
+            console.log(resp)
+            if(!resp){
+                return res.send({
+                    error: " You have entered incorred password"
+                })
+            }
             jwt.sign(
                 email,
                 JWT_SECRET,
@@ -46,7 +52,8 @@ loginRouter.post('/login', async (req, res) => {
                     })
 
                     return res.send({
-                        email: user.email
+                        email: user.email,
+                        role: user.role
                     })
                 }
             )

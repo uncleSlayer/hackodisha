@@ -43,8 +43,20 @@ const Login = () => {
             })
             .then((resp) => {
                 console.log(resp);
-                setLoggedUser({email : resp.email})
-                navigate('/')
+                if(resp.error){
+                    alert(resp.error)
+                    setEmail('')
+                    setPass('')
+                    navigate('/auth')
+                }
+                else{
+                    setLoggedUser({email : resp.email})
+                    console.log("s2:" + loggedUser)
+                    if(resp.role == "USER") navigate('/')
+                    else navigate('/vendor')
+                } 
+            }).catch((err)=>{
+                alert("Error: " + err);
             })
 
     }
@@ -91,9 +103,16 @@ const Login = () => {
         
     }
     
-)
+).then((resp)=>{
+    console.log(resp.json())
+    alert("You have signed in successfully. Please Login!!")
+    toggle()
+    navigate('/auth')
+    
+}).catch((err)=>{
+    alert("Error: " + err);
+})
 
-console.log(resp.json())
 
 }
 
@@ -146,7 +165,9 @@ console.log(resp.json())
                                         name="role" value="VENDOR" />
                                     </label>
                                 </div>
-                            <input type="submit" onClick={handleSignUpBtn} value="SignUp"/>
+                                <input type="submit" onClick={(e)=>{
+                                handleSignUpBtn(e);
+                            }}  value="SignUp"/>
                             <p className="signup">already have an account? <span onClick={toggle}>Sign in.</span></p>
                         </form>
                     </div>
@@ -155,8 +176,7 @@ console.log(resp.json())
                     </div>
                 </div>   
             </div>
-
-        </div>
+   </div>
     )
 
 }

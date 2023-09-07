@@ -6,7 +6,11 @@ import { productsRouter } from "./routes/vendors/products/upload";
 import cookieParser from "cookie-parser"
 import { productRouter } from "./routes/vendors/products/fetchProduct";
 import { cartRouter } from "./routes/users/cart/cart";
+
+import { fetchCart } from './routes/users/cart/fetchCart'
+
 import { orderRouter } from "./routes/users/order/order";
+
 
 const app = express()
 
@@ -25,6 +29,10 @@ app.use(loginRouter)
 app.use(productsRouter)
 app.use(productRouter)
 app.use(cartRouter)
+
+app.use(fetchCart)
+
 app.use(orderRouter)
+
 
 app.listen(8000, () => console.log('listening on port 8000'))
