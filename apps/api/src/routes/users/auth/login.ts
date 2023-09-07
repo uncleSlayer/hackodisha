@@ -52,7 +52,8 @@ loginRouter.post('/login', async (req, res) => {
                     })
 
                     return res.send({
-                        email: user.email
+                        email: user.email,
+                        role: user.role
                     })
                 }
             )
