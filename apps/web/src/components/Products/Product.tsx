@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Product.css'
 interface Product {
     id:number,
     name: string;
@@ -12,7 +12,8 @@ interface Product {
 
 const Product:React.FC<Product> = ({id,name,category,price, desc,quantity,imageUrl}) => {
   return (
-    <div>
+    <div className="productCard">
+        <div ><img className='productCardImage' src={imageUrl} /></div>
         <div>{id}</div>
         <div>{name}</div>
         <div>{category}</div>
