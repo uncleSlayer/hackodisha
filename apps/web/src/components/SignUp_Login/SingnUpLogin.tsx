@@ -44,7 +44,10 @@ const Login = () => {
             .then((resp) => {
                 console.log(resp);
                 setLoggedUser({email : resp.email})
-                navigate('/')
+                if(resp.role == "USER") navigate('/')
+                else navigate('/vendor')
+            }).catch((err)=>{
+                alert("Error: " + err);
             })
 
     }
@@ -91,9 +94,14 @@ const Login = () => {
         
     }
     
-)
+).then((resp)=>{
+    console.log(resp.json())
+    navigate('/login')
+    alert("You have signed in successfully. Please Login!!")
+}).catch((err)=>{
+    alert("Error: " + err);
+})
 
-console.log(resp.json())
 
 }
 
