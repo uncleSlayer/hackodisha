@@ -9,7 +9,7 @@ import '../../index.css'
 import './auth.css'
 
 
-const Login = () => {
+const login = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
@@ -38,7 +38,7 @@ const Login = () => {
             })
             .then((resp) => {
                 console.log(resp);
-                setLoggedUser(resp.email)
+                setLoggedUser({email : resp.email})
                 navigate('/')
             })
 
@@ -64,4 +64,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default login

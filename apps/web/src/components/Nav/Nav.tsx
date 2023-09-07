@@ -4,6 +4,7 @@ import './nav.css'
 import Logo from '../../assets/pitcher.png'
 import Cart from '../../assets/cart.png'
 import User from '../../assets/user.png'
+import UserAdd from '../../assets/useradd.png'
 import Carousel from '../../assets/carousel.png'
 import { Link } from 'react-router-dom';
 import { useRecoilState } from "recoil"
@@ -13,6 +14,7 @@ const Nav = () => {
 
     const [loggedUserEmail, setLoggedUserEmail] = useRecoilState(loggedUser)
     console.log(loggedUserEmail)
+
 
     return (
         <div className="flexC sticky z_20">
@@ -40,11 +42,13 @@ const Nav = () => {
                             <img className="navopt_img" src={Cart} alt="dd" />
                         </div>
                     </Link>
-                    <Link to="/signup">
+                    <Link to="/auth">
                     <div className="navopt flex">
                         
                             <div className="pretext">profile</div>
-                            <img className="navopt_img" src={User} alt="dd" />
+                            {    
+                                  loggedUserEmail.email.length > 0 ? (<img className='navopt_img' src={User} />) : (<img className='navopt_img' src={UserAdd} />)
+                            }
                         
                     </div>
                     </Link>

@@ -6,7 +6,6 @@ export const s3 = new S3Client({
     credentials: {
         accessKeyId: '',
         secretAccessKey: ''
-       
     }
 })
 
@@ -15,9 +14,7 @@ export const returnURL = async (keyName: string) => {
         Bucket: 'hackodhisa',
         Key: keyName
     })
-
     return await getSignedUrl(s3, command)
-
 }
 
 export const uploadObjUrl = async (keyName: string, contentType: string) => {
@@ -26,6 +23,5 @@ export const uploadObjUrl = async (keyName: string, contentType: string) => {
         Key: `products/${keyName}`,
         ContentType: contentType
     })
-
     return await getSignedUrl(s3, command)
 }

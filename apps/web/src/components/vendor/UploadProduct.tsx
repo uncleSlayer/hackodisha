@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { MouseEvent } from "react"
 import Select from "react-select"
 
@@ -8,15 +8,18 @@ const UploadProduct = () => {
     const [desc, setDesc] = useState('')
     const [price, setPrice] = useState<number>(0)
     const [quantity, setQuantity] = useState<number>(1)
+    // const [imgg, setImgg] = useState<File>()
 
-    const handleCategory = (event:React.ChangeEvent<HTMLSelectElement>) => {
+    const handleCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setCategory(event.target.value);
-      };
+    };
 
     const handleProdUploadBtn = async (e: MouseEvent) => {
 
+        // console.log(imgg)
+
         let postData = {
-            productData:{  
+            productData: {
                 "name": productName,
                 "category": category,
                 "price": price,
@@ -24,7 +27,7 @@ const UploadProduct = () => {
                 "quantity": quantity
             }
         }
-          
+
         let productdataJSON = JSON.stringify(postData);
         console.log(productdataJSON)
 
@@ -42,9 +45,21 @@ const UploadProduct = () => {
             }
         )
 
-        console.log(resp.json())
+        // const respDec: { message: string, url: string } = await resp.json()
+        // const url = respDec.url
+
+        // const uploadResp = await fetch(
+        //     url,
+        //     {
+        //         method: 'put',
+        //         headers: {
+        //             'Content-type': `${imgg?.type}`
+        //         },
+        //         body: imgg
+        //     }
+        // )
     }
-  
+
 
     return (
         <div>
@@ -78,7 +93,7 @@ const UploadProduct = () => {
                     <option value="Utensils">Utensils</option>
                     <option value="Pottery">Pottery</option>
 
- 
+
                 </select>
 
                 <p>Price</p>
@@ -91,7 +106,18 @@ const UploadProduct = () => {
                 <p>Quantity</p>
                 <input type="number" className="border" value={quantity} onChange={(e) => setQuantity(+e.target.value)} />
 
+                {/* <p>Image</p>
+                <input type="file" onChange={(e: React.FormEvent) => {
+                    const file = (e.target as HTMLInputElement).files
 
+                    if (file && file.length > 0) {
+                        setImgg(file[0])
+                    }
+
+                }} /> */}
+
+                <br />
+                <br />
 
                 <button onClick={handleProdUploadBtn}>ok</button>
             </form>
