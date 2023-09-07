@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Cart from './CartItem';
 import { SERVER_IP } from 'configs';
+import { cartAtom } from "store"
+import { useRecoilState } from 'recoil';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Your_Cart = () => {
+
+    const [cartArrStore, setCartArrStore] = useRecoilState(cartAtom)
+    const navigate = useNavigate()
+
     useEffect(() => {
         fetch(
             `${SERVER_IP}fetchcarts`,
@@ -23,6 +30,7 @@ const Your_Cart = () => {
             .then((resp) => {
                 console.log(resp)
                 setcartArray(resp.shoppingCart)
+                setCartArrStore(resp.shoppingCart)
             })
     }, [])
 
@@ -50,12 +58,14 @@ const Your_Cart = () => {
                             <br>
                             </br>
                         </div>
-
                     )
                 }
             })}
 
-            <button>Proceed to Payment</button>
+            <button onClick={() => {
+                navigate('/checkout/address')
+            }
+            }>Proceed to checkout</button>
         </div>
     )
 }

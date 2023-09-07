@@ -73,6 +73,19 @@ model OrderItem {
   // value is price
 }
 
+// http://localhost:5173/success/?houseno=${orderAddress.houseNumber}&city=${orderAddress.cityAddr}&state=${orderAddress.stateAddr}&district=${orderAddress.districtAddr}&pin=${orderAddress.pinAddr}&phone=${orderAddress.phone}`
+
+model Address {
+  id Int @id @unique @default(autoincrement())
+
+  houseNo String
+  city    String
+  state   String
+  pin     Int
+  country String
+  phone   String
+}
+
 enum Role {
   VENDOR
   USER
