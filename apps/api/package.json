@@ -19,15 +19,17 @@
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
+    "@types/stripe": "^8.0.417",
     "bcrypt": "^5.1.1",
+    "config": "*",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "database": "*",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "zod-types": "*",
-    "type-checks": "*",
     "s3": "*",
-    "config": "*"
+    "stripe": "^13.4.0",
+    "type-checks": "*",
+    "zod-types": "*"
   }
 }

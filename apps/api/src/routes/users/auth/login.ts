@@ -27,7 +27,7 @@ loginRouter.post('/login', async (req, res) => {
     bcrypt.compare(pass, user.hashedPass)
         .then((resp) => {
             console.log(resp)
-            if(!resp){
+            if (!resp) {
                 return res.send({
                     error: " You have entered incorred password"
                 })
@@ -48,7 +48,7 @@ loginRouter.post('/login', async (req, res) => {
                     res.cookie('token', token, {
                         httpOnly: true,
                         secure: true,
-                        maxAge: 5 * 60 * 1000
+                        maxAge: 500 * 60 * 1000
                     })
 
                     return res.send({
