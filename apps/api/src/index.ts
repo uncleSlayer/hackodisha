@@ -10,6 +10,7 @@ import { cartRouter } from "./routes/users/cart/cart";
 import { fetchCart } from './routes/users/cart/fetchCart'
 
 import { orderRouter } from "./routes/users/order/order";
+import { stripeRouter } from "./routes/users/order/stripe";
 
 
 const app = express()
@@ -29,6 +30,7 @@ app.use(loginRouter)
 app.use(productsRouter)
 app.use(productRouter)
 app.use(cartRouter)
+app.use(stripeRouter)
 
 app.use(fetchCart)
 

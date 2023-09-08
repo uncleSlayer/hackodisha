@@ -8,7 +8,7 @@ export const cartRouter = Router()
 cartRouter.post('/cart', async (req, res) => {
 
     const productId: number = req.body.id
-    const quantity:number = req.body.quantity
+    const quantity: number = req.body.quantity
 
 
     const token = req.cookies.token
@@ -54,14 +54,14 @@ cartRouter.post('/cart', async (req, res) => {
         data: {
             userId: user.id,
             productId: product.id,
-
+            price: product.price,
             quantity: quantity
-
         }
     })
 
     return res.send({
-        message: `cart with cart id: ${cartItem.id} created`
+        message: `cart with cart id: ${cartItem.id} created`,
+        data: cartItem
     })
 
 })
