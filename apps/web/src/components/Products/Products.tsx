@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 const Products: React.FC = () => {
     const { category } = useParams();
 
-    const [lastItem,setLastItem] = useState(7)
+    const [lastItem,setLastItem] = useState(0)
     const [hasMore, setHasMore] = useState(true)
 
     const [productArray, setProductArray] = useState<{
