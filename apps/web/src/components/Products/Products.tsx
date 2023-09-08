@@ -3,13 +3,18 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { SERVER_IP } from 'configs'
 import Product from './Product';
 import { useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './style_product.css'
 
 
 
 const Products: React.FC = () => {
     const { category } = useParams();
 
-    const [lastItem,setLastItem] = useState(7)
+    const [lastItem, setLastItem] = useState(7)
     const [hasMore, setHasMore] = useState(true)
 
     const [productArray, setProductArray] = useState<{
@@ -23,7 +28,7 @@ const Products: React.FC = () => {
         userId: number,
     }[]>([])
     const fetchData = () => {
-        fetch(SERVER_IP + "products/all/"+category,
+        fetch(SERVER_IP + "products/all/" + category,
             {
                 method: 'post',
                 credentials: 'include',
@@ -31,7 +36,7 @@ const Products: React.FC = () => {
                     'Content-type': 'Application/json'
                 },
                 body: JSON.stringify({
-                    lastItem:lastItem
+                    lastItem: lastItem
                 })
             }).then((response) => {
                 if (response.ok) {
@@ -44,19 +49,20 @@ const Products: React.FC = () => {
                     console.log(data.products)
                     setHasMore(false)
                 }
-                setProductArray([...productArray,...data.products]);
+                setProductArray([...productArray, ...data.products]);
             })
-           
+
 
     }
     useEffect(fetchData, [lastItem])
-   // console.log(productArray)
+    // console.log(productArray)
 
     return (
 
-        <div>
+        // <div className='container'>
 
-
+       
+      <Row className='row' md={3}>
             {productArray.map((product) => {
                 if (!product) {
                     return
@@ -64,36 +70,34 @@ const Products: React.FC = () => {
                     return (
                         <InfiniteScroll key={product.id}
                             dataLength={productArray.length}
-                            next={()=>{
-                    
-                                setLastItem(productArray[productArray.length-1].id)
+                            next={() => {
+
+                                setLastItem(productArray[productArray.length - 1].id)
                             }}
                             hasMore={hasMore}
-                            // loader={<h4>Loading...</h4>}
-                            // endMessage={
-                            //     <p style={{ textAlign: 'center' }}>
-                            //         <b>Yay! You have seen it all</b>
-                            //     </p>}
-                             >
-
-                            <div >
-                                <Product id={product.id} name={product.name}
-                                    category={product.category}
-                                    price={product.price}
-                                    desc={product.description}
-                                    quantity={product.quantity}
-                                    imageUrl={product.imageUrl}
-                                />
-                                <br>
-                                </br>
-                            </div>
+                        // loader={<h4>Loading...</h4>
+                        // endMessage={
+                        //     <p style={{ textAlign: 'center' }}>
+                        //         <b>Yay! You have seen it all</b>
+                        //     </p>}
+                        >
+                            <Col className='item'>
+                             <Product id={product.id} name={product.name}
+                                        category={product.category}
+                                        price={product.price}
+                                        desc={product.description}
+                                        quantity={product.quantity}
+                                        imageUrl={product.imageUrl}
+                                    />
+                            </Col>
+                           
                         </InfiniteScroll>
 
                     )
                 }
             })}
-
-        </div>
+      </Row>
+        // </div>
     )
 }
 
