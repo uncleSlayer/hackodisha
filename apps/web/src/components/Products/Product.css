@@ -25,15 +25,20 @@
 }
 .card{
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     border: 2px solid var(--bg-color1);
     padding: 0px;
     margin: 20px 8px ;
     box-shadow: rgba(0, 0, 0, 0.735) 0px 10px 20px -10px;
+    transition: all 0.4s ease-in-out;
     
 }
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.881) 0px 10px 10px -10px;
+    scale: 1.02;
+}
 .cardbody{
-    background: rgb(220, 188, 159);
+    background: var(--bg-color2);
     border-radius: 0 0 5px 5px;
     padding: 10px 5px;
 }
@@ -47,33 +52,49 @@
     background-size: cover;
     border-radius:  5px 5px 0 0;
     border-bottom: 3px solid var(--bg-color1);
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
 
 
+
+}
+.imagecard:hover{
+    border: 3px solid var(--bg-color1);
+    transform: scale(1.02);
 }
 .cartbutton{
     background: #5E503F;
     border:2px solid var(--bg-color1);
     margin-bottom: -5px;
     margin-right: 10px;
-    box-shadow: rgba(0, 0, 0, 0.735) 0px 10px 20px -10px;
+    box-shadow: rgba(0, 0, 0, 0.881) 0px 10px 20px -10px;
+    transition: all 0.4s ease-in-out;
 }
-.cartbutton :hover{
-    
-    border:2px solid var(--bg-color2);
+.cartbutton:hover{
+    background: #4a3f31;
+    border:2px solid var(--bg-color1);
+    box-shadow: rgba(0, 0, 0, 0.881) 0px 10px 20px -10px;
 
-    margin-bottom: -5px;
-    margin-right: 10px;
 }
 .cardtitle{
     font-weight:500;
     min-height: 40px;
 }
 .imagdesc{
-    /* background:red; */
+
     height:100px;
+    
     overflow:hidden;
     overflow-y: scroll;
     font-weight: 300;
 
 
+}
+.containercardsection{
+    padding:0;
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import Category from './Category';
 
+import './catalog.css'
+
 import { ProductCategory } from "@prisma/client";
 
 const categories = Object.values(ProductCategory); // returns an array of string
@@ -12,7 +14,7 @@ const Catalogue = () => {
   
   return (
     <div className='categories'>{categories.map((category,index)=>{
-      return<div className='category' key={index}><Category category= {category}/></div>
+      return <div className='category' key={index}><Category category= {category}/></div>
     })}</div>
   )
 }
