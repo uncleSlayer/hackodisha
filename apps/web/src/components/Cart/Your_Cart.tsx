@@ -4,6 +4,7 @@ import { SERVER_IP } from 'configs';
 import { cartAtom } from "store"
 import { useRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
+import './style_cart.css'
 
 
 
@@ -40,20 +41,49 @@ const Your_Cart = () => {
         price: number;
         quantity: number;
         productId: number;
+        imageUrl: string
     }[]>([])
     return (
-        <div>
+        <div className='container' style={{}}>
+        
+            <div className='price' >
+                <h2>Price Details:</h2>
+                <hr /><br />
+                <table>
+                    <tr>
+                    <th>
+                    <td><h4>Price (9 items):</h4></td>
+                    </th>
+                        <th>
+                          <td><h4>5000</h4></td> 
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                        <td><h4>Total Price:</h4></td>
+                          </th>
+                          <th><td><h4> 1000</h4></td></th>
+                    </tr>
+                </table>
+                <hr />
+             <button className='Btn' onClick={() => {
+                navigate('/checkout/address')
+              }
+              }>Proceed to checkout</button>
+            </div>
+        
             {cartArray.map((cartItem) => {
                 if (!cartItem) {
                     return
                 } else {
+                    const TotalPrice= cartItem.price * cartItem.quantity;
                     return (
-                        <div key={cartItem.id}>
-                            <Cart id={cartItem.id}
-                                name={cartItem.name}
+                        <div className='card' key={cartItem.id}>
+                            <Cart name={cartItem.name}
+                                imageUrl={cartItem.imageUrl}
                                 price={cartItem.price}
                                 quantity={cartItem.quantity}
-                                productId={cartItem.productId}
+                                TotalPrice={TotalPrice}   
                             />
                             <br>
                             </br>
@@ -61,12 +91,8 @@ const Your_Cart = () => {
                     )
                 }
             })}
-
-            <button onClick={() => {
-                navigate('/checkout/address')
-            }
-            }>Proceed to checkout</button>
         </div>
+
     )
 }
 
