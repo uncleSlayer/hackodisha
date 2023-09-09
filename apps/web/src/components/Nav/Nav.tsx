@@ -14,6 +14,16 @@ const Nav = () => {
 
     const [loggedUserEmail, setLoggedUserEmail] = useRecoilState(loggedUser)
     console.log(loggedUserEmail)
+    let auth = "/auth"
+
+    if(loggedUserEmail.email == ''){
+        auth = '/auth'
+    }else if(loggedUserEmail.log_type=="VENDOR"){
+        auth = "/vendor"
+    }else{
+        auth = "/user_logout"
+    }
+  
 
 
     return (
@@ -42,7 +52,7 @@ const Nav = () => {
                             <img className="navopt_img" src={Cart} alt="dd" />
                         </div>
                     </Link>
-                    <Link to="/auth">
+                    <Link to={auth}>
                     <div className="navopt flex">
                         
                             <div className="pretext">profile</div>
