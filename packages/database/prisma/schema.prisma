@@ -69,8 +69,10 @@ model OrderItem {
   quantity  Int
   orderDate DateTime @default(now())
 
-  value Int
+  value     Int
+  address   Address @relation(fields: [addressId], references: [id])
   // value is price
+  addressId Int
 }
 
 // http://localhost:5173/success/?houseno=${orderAddress.houseNumber}&city=${orderAddress.cityAddr}&state=${orderAddress.stateAddr}&district=${orderAddress.districtAddr}&pin=${orderAddress.pinAddr}&phone=${orderAddress.phone}`
@@ -78,12 +80,13 @@ model OrderItem {
 model Address {
   id Int @id @unique @default(autoincrement())
 
-  houseNo String
-  city    String
-  state   String
-  pin     Int
-  country String
-  phone   String
+  houseNo   String
+  city      String
+  state     String
+  pin       Int
+  country   String
+  phone     String
+  OrderItem OrderItem[]
 }
 
 enum Role {
