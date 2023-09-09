@@ -64,7 +64,7 @@ const Products: React.FC = () => {
         // <div className='container'>
 
        
-      <Row className='row' md={3}>
+      <Row className='row heigh' md={3}>
             {productArray.map((product) => {
                 if (!product) {
                     return

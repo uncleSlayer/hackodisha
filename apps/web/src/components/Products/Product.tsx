@@ -14,18 +14,20 @@ interface Product {
 
 const Product: React.FC<Product> = ({ name, category, price ,desc, imageUrl }) => {
   return (
-    <div className='section'>
-    <Card className="" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={imageUrl} />
-      <Card.Body>
+    
+    <Card  className='card'>
+      <Card.Img className="imagecard" variant="top" src={imageUrl} />
+      <Card.Body className='cardbody'>
         <Card.Title> <b>{name}</b></Card.Title>
-        <Card.Text>
+
+        <Card.Text className="imagdesc">
+
           {desc}
         </Card.Text>
         <Button variant="warning">+</Button>              <b>Price:Rs{price}</b>
       </Card.Body>
     </Card>
-    </div>
+    
   )
 }
 
