@@ -1,5 +1,24 @@
 .section{
-    margin-top: 0;
-    align-items:start;
-    background: white;
+    height:50vh;
+    display: flex;
+    align-items: center;
+    padding:0;
+    background: rgb(204, 71, 71);
+}
+.card{
+    background: rgb(255, 212, 212);
+    padding: 20px;
+    margin: 0px 0px;
+}
+.cardbody{
+    background: rgb(220, 159, 159);
+    padding: 20px 5px;
+}
+.imagecard{
+    height: 300px;
+    background-size: cover;
+}
+.imagdesc{
+    background:red;
+    height:100px;
 }
