@@ -17,12 +17,12 @@
 
     padding: 20px;
 
-    transition: 0.5s;
+    transition: 1s;
     
 }
 
 .section.active {
-    background: #c3956f;
+    background: #efd7c2;
 }
 
 .section .container {
@@ -64,7 +64,7 @@
 
     height: 100%;
 
-    transition: 0.5;
+    transition: 1s;
 }
 
 .section .container .user .imgBx img {
@@ -98,7 +98,7 @@
 
     padding: 40px;
 
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .section .container .user .formBx h2 {
@@ -151,7 +151,7 @@
     font-size: 17px;
     font-weight: 500;
     Letter-spacing: 1px;
-    transition: 0.5s;
+    transition: 1s;
     box-shadow: rgba(40, 30, 24, 0.83) 0px 30px 80px -50px;
     border-radius: 2px;
     
@@ -210,7 +210,7 @@
 
 .section .container .signupBx .imgBx {
     top: -100%;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .section .container.active .signupBx .imgBx {
@@ -227,7 +227,7 @@
 
 .section .container .signinBx .imgBx {
     top: 0;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .section .container.active .signinBx .formBx {
