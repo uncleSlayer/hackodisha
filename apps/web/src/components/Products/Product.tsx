@@ -18,8 +18,11 @@ const Product: React.FC<Product> = ({ name, category, price ,desc, imageUrl }) =
     <Card  className='card'>
       <Card.Img className="imagecard"  src={imageUrl} />
       <Card.Body className='cardbody'>
+
         <Card.Title className='cardtitle'> {name} </Card.Title>
+
         <Card.Text className="imagdesc">
+
           {desc}
         </Card.Text>
         <Button className="cartbutton">+</Button>   

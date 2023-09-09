@@ -34,7 +34,8 @@ fetchCart.post('/fetchcarts', async (req, res) => {
         name: string,
         price: number,
         quantity: number,
-        productId: number
+        productId: number,
+        imageUrl: string
     }[] = []
 
     await Promise.all(cartItems.map(async (item) => {
@@ -48,7 +49,8 @@ fetchCart.post('/fetchcarts', async (req, res) => {
             name: '',
             price: 0,
             quantity: 0,
-            productId: 0
+            productId: 0,
+            imageUrl: ''
         }
 
         sendUser.id = item.id
@@ -56,6 +58,7 @@ fetchCart.post('/fetchcarts', async (req, res) => {
         sendUser.price = item.price
         sendUser.productId = item.productId
         sendUser.quantity = item.quantity
+        sendUser.imageUrl = product.imageUrl
         sendUserArr.push(sendUser)
     }))
 

@@ -1,0 +1,58 @@
+.container{
+    margin: 0;
+    border: 0;
+}
+.card{
+    width: 70%;
+    margin-left: 0;
+    margin-top: 30px;
+    background:rgb(252, 249, 244);
+}
+.price{
+    width: 38%;
+    height: 75%;
+    left: 950px;
+    position: fixed;
+    align-content: center;
+    border-style:solid;
+    border-color: rgb(228, 228, 228);
+    border-radius: 10px;    
+}
+h2{
+    text-align: center;
+    color: rgb(96, 92, 92);
+    padding-top: 15px ;
+    padding-left: 10px;
+}
+hr{
+    position: absolute;
+    left: 20px;
+    width:90%;
+    padding-top: 0;
+    margin-top: 0;
+    align-self: center;
+}
+table{
+    margin: 50px;
+}
+tr{
+    margin: 50px;
+}
+td{
+    color: rgb(96, 92, 92);
+    padding: 25px;
+}
+.Btn{
+    background:rgb(148, 108, 33);
+    color: white;
+    height: 50px;
+    padding: 15px;
+    border-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 400px;
+    left: 35%;
+}
+.Btn:hover{
+    background:  rgb(206, 135, 3);
+}

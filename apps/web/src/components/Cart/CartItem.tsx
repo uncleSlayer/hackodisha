@@ -1,21 +1,27 @@
 import React from 'react'
+import {Button, Card  }from 'react-bootstrap';
 
 type Cart = {
-  id: number;
   name: string;
-  price: number;
+  price: number
+  TotalPrice: number;
   quantity: number;
-  productId: number;
+  imageUrl: string
 }
 
-const Cart: React.FC<Cart> = ({ id, name, productId, quantity, price }) => {
+const Cart: React.FC<Cart> = ({  name, imageUrl,price, quantity, TotalPrice }) => {
   return (
     <div>
-      <div>{id}</div>
-      <div>{name}</div>
-      <div>{price}</div>
-      <div>{quantity}</div>
-      <div>{productId}</div>
+      <Card className="" style={{ width: '18rem' , marginLeft: '300px', marginTop:'60px'}}>
+      <Card.Img variant="top" src={imageUrl} />
+      <Card.Body>
+        <Card.Title> <b>{name}</b></Card.Title> <br />
+        <Card.Text>
+          <h3>Rs:{price}</h3>
+        </Card.Text>
+        <Button variant="warning"><b>-</b></Button> <b>Qty : 2</b> <Button variant="warning"><b>+</b></Button>              
+      </Card.Body>
+      </Card>
     </div>
   )
 }
