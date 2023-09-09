@@ -20,7 +20,6 @@ const Product: React.FC<Product> = ({ name, category, price ,desc, imageUrl }) =
       <Card.Body>
         <Card.Title> <b>{name}</b></Card.Title>
         <Card.Text>
-          <h3></h3>
           {desc}
         </Card.Text>
         <Button variant="warning">+</Button>              <b>Price:Rs{price}</b>
