@@ -109,15 +109,12 @@ cartRouter.post('/cart/delete', async (req, res) => {
     console.log(user, cartItemId);
 
 
-    await prisma.cartItem.update({
+    await prisma.cartItem.delete({
         where: {
             id: cartItemId,
             userId: user?.id
         },
 
-        data: {
-            status: "DEAD"
-        }
     })
 
     return res.send({
@@ -152,6 +149,20 @@ cartRouter.post('/cart/remove', async (req, res) => {
     if (!user) {
         return res.send({
             message: 'user not found'
+        })
+    }
+
+    if(cartItem.quantity == 1){
+        await prisma.cartItem.delete({
+            where: {
+                id: cartItem.id,
+                userId: user?.id
+            },
+    
+        })
+
+        return res.send({
+            message: 'remove one item from cart'
         })
     }
 
