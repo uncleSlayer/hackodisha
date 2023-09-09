@@ -6,7 +6,6 @@ import Slider from 'react-slick'
 
 import Product from '../Products/Product';
 
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 interface Carousel {
@@ -45,33 +44,15 @@ interface Carousel {
 
 }
 
-const settings1 = {
+const settings = {
   dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
-  
 };
 
-const settings2 = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows:true
-};
-
-const settings3 = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows:true
-};
 
 
 
@@ -79,7 +60,7 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
   console.log(carousel1)
   return (
     <div className="carousel_container">
-      <Slider {...settings1}>
+      <Slider {...settings}>
         {carousel1.map((product)=>{
           if(!product){
             return
@@ -100,7 +81,9 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
         
     </Slider>
 
-    <Slider {...settings2}>
+    <div className='card_padding'></div>
+
+    <Slider {...settings}>
         {carousel2.map((product)=>{
           if(!product){
             return
@@ -121,7 +104,9 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
         
     </Slider>
 
-    <Slider {...settings3}>
+    <div className='card_padding'></div>
+
+    <Slider {...settings}>
         {carousel3.map((product)=>{
           if(!product){
             return
