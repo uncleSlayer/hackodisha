@@ -9,6 +9,8 @@ orderRouter.post('/order/create', async (req, res) => {
     const token = req.cookies.token
     const userEmail = JWT.verify(token, JWT_SECRET)
 
+    const orderAddress = req.body.orderAddress
+
     const user = await prisma.user.findFirst({
         where: {
             email: userEmail.toString()
@@ -31,6 +33,17 @@ orderRouter.post('/order/create', async (req, res) => {
         quantity: number;
     }[] = user.Cart
 
+    const address = await prisma.address.create({
+        data: {
+            houseNo: orderAddress.houseNo,
+            city: orderAddress.city,
+            state: orderAddress.state,
+            country: orderAddress.country,
+            phone: orderAddress.phone,
+            pin: parseInt(orderAddress.pin)
+        }
+    })
+
     cartItemsArr.map(async (item) => {
 
         const product = await prisma.product.findFirst({ where: { id: item.productId } })
@@ -47,7 +60,8 @@ orderRouter.post('/order/create', async (req, res) => {
             data: {
                 quantity: item.quantity,
                 value: orderValue,
-                cartItemId: item.id
+                cartItemId: item.id,
+                addressId: address.id
             }
         })
 
