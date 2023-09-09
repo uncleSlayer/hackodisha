@@ -4,6 +4,7 @@ import { SERVER_IP } from 'configs';
 import { cartAtom } from "store"
 import { useRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
+
 import './style_cart.css'
 
 

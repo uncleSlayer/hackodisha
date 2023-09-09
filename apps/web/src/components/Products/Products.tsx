@@ -4,7 +4,7 @@ import { SERVER_IP } from 'configs'
 import Product from './Product';
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './style_product.css'
@@ -61,7 +61,7 @@ const Products: React.FC = () => {
 
     return (
 
-        <div className='container'>
+    <div className='containercardsection'>
 
        
       <Row className='row heigh' md={3}>
