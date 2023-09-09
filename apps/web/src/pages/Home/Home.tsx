@@ -10,7 +10,7 @@ import { date } from 'zod'
 
 const Home = () => {
 
-  const [carosel1, setCarousel1] = useState<{
+  const [carousel1, setCarousel1] = useState<{
     id: number,
     name: string,
     category: string,
@@ -65,7 +65,7 @@ const Home = () => {
     <div>
       <Hero />
       {/* <Search /> */}
-      <Carousal data={carosel1}/>
+      <Carousal data={carousel1}/>
     </div>
   )
 }
