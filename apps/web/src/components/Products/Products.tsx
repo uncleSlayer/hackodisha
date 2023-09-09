@@ -61,7 +61,7 @@ const Products: React.FC = () => {
 
     return (
 
-        // <div className='container'>
+        <div className='container'>
 
        
       <Row className='row heigh' md={3}>
@@ -99,7 +99,7 @@ const Products: React.FC = () => {
                 }
             })}
       </Row>
-        // </div>
+        </div>
     )
 }
 
