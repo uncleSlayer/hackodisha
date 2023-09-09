@@ -8,7 +8,7 @@ export const cartRouter = Router()
 cartRouter.post('/cart', async (req, res) => {
 
     const productId: number = req.body.id
-    const quantity: number = req.body.quantity
+   
 
 
     const token = req.cookies.token
@@ -44,6 +44,28 @@ cartRouter.post('/cart', async (req, res) => {
         }
     })
 
+    const cart = await prisma.cartItem.findFirst({
+        where:{
+            productId:product?.id
+        }
+    })
+
+    if(cart){
+        await prisma.cartItem.update({
+            where:{
+                id: cart.id
+            },
+            data: {
+                quantity: cart.quantity+1
+            }
+            
+        })
+
+        return res.send({
+            message: "Item added to cart"
+        }) 
+    }
+
     if (typeof product?.id !== 'number') {
         return res.send({
             error: 'incorrect product id type'
@@ -55,7 +77,7 @@ cartRouter.post('/cart', async (req, res) => {
             userId: user.id,
             productId: product.id,
             price: product.price,
-            quantity: quantity
+            quantity: 1
         }
     })
 
