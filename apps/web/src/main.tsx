@@ -8,7 +8,6 @@ import Home from './pages/Home/Home.tsx'
 import Cart from './pages/Cart/cart.tsx'
 import Catalog from './pages/Catalog/Catalog.tsx'
 import Login from './components/SignUp_Login/SingnUpLogin.tsx'
-import Signup from './components/auth/Signup.tsx'
 import Products from './components/Products/Products.tsx'
 import { RecoilRoot } from "recoil"
 import { BrowserRouter } from 'react-router-dom';
@@ -18,6 +17,7 @@ import Vendor from './components/vendor/Vendor.tsx'
 import Your_Cart from './components/Cart/Your_Cart.tsx'
 import Address from './components/address/Address.tsx'
 import Success from './components/payment/Success.tsx'
+import UserLogout from './components/user/UserLogout.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -39,6 +39,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/checkout/address' element={<Address />} />
         {/* http://localhost:5173/success/?houseno=${orderAddress.houseNumber}&city=${orderAddress.cityAddr}&state=${orderAddress.stateAddr}&pin=${orderAddress.pinAddr}&phone=${orderAddress.phone}&country=${orderAddress.country}` */}
         <Route path='/success' element={<Success />} />
+        <Route path='/user_logout' element={<UserLogout/>} />
       </Routes>
     </BrowserRouter>
   </RecoilRoot>,

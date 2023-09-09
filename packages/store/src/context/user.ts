@@ -1,8 +1,9 @@
 import { atom } from "recoil"
 
 export const loggedUser = atom({
-    key: 'user',
+    key: 'login_type',
     default: {
-        email: ''
+        email: '',
+        log_type:''
     }
 })
