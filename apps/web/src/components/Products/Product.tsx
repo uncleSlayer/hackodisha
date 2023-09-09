@@ -19,7 +19,9 @@ const Product: React.FC<Product> = ({ name, category, price ,desc, imageUrl }) =
       <Card.Img className="imagecard" variant="top" src={imageUrl} />
       <Card.Body className='cardbody'>
         <Card.Title> <b>{name}</b></Card.Title>
+
         <Card.Text className="imagdesc">
+
           {desc}
         </Card.Text>
         <Button variant="warning">+</Button>              <b>Price:Rs{price}</b>
