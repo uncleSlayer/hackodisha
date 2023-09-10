@@ -22,16 +22,14 @@ const UserLogout = () => {
         e.preventDefault()
 
         fetch(
-            'http://localhost:8000/login',
+            'http://localhost:8000/logout',
             {
                 method: 'post',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({
-                    
-                })
+                
             }
         )
             .then((resp) => {
@@ -42,13 +40,12 @@ const UserLogout = () => {
                 if(resp.error){
                     alert(resp.error)
                  
-                    navigate('/auth')
+                    navigate('/')
                 }
                 else{
-                    setLoggedUser({email : resp.email,log_type:resp.role})
-                    console.log("s2:" + loggedUser)
-                    if(resp.role == "USER") navigate('/')
-                    else navigate('/vendor')
+                    setLoggedUser({email : "",log_type:""})
+                  
+                    navigate('/auth')
                 } 
             }).catch((err)=>{
                 alert("Error: " + err);
@@ -114,7 +111,7 @@ const UserLogout = () => {
                 <div className="formBx">
                     <form className="f">
                         
-                        <input type="submit" value="Logout"/>
+                        <input type="submit" onClick={handleLogoutBtn} value="Logout"/>
                         <p className="signup">Add a comment or review <span  onClick={toggle} >Click Here</span></p>
                     </form>
                 </div>
