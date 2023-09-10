@@ -7,6 +7,7 @@ export const cartAtom = atom({
         name: '',
         price: 0,
         quantity: 0,
-        productId: 0
+        productId: 0,
+        imageURL: ''
     }]
 })
