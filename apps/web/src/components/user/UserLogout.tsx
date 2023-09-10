@@ -2,7 +2,7 @@ import { useState } from "react"
 import React  from 'react'
 import { MouseEvent } from "react"
 import { useNavigate } from "react-router-dom"
-import { loggedUser } from "store"
+import { loggedUser,cartAtom } from "store"
 import { useRecoilState } from "recoil"
 
 
@@ -17,6 +17,7 @@ const UserLogout = () => {
     const navigate = useNavigate()
 
     const [loggedUserState, setLoggedUser] = useRecoilState(loggedUser)
+    const [cart,setCart] = useRecoilState(cartAtom)
 
     const handleLogoutBtn = (e: MouseEvent) => {
         e.preventDefault()
@@ -44,7 +45,12 @@ const UserLogout = () => {
                 }
                 else{
                     setLoggedUser({email : "",log_type:""})
-                  
+                    setCart({id: 0,
+        name: '',
+        price: 0,
+        quantity: 0,
+        productId: 0,
+        imageURL: ''})
                     navigate('/auth')
                 } 
             }).catch((err)=>{
@@ -58,43 +64,7 @@ const UserLogout = () => {
   
     const [role, setRole] = useState<String>()
 
-    
-
-    const handleSignUpBtn = async (e: MouseEvent) => {
-
-        // const phone = signupData.phone
-        // const email = signupData.email
-        // const name = signupData.name
-        // const pass = signupData.pass
-        // const rePass = signupData.rePass
-
-        e.preventDefault()
-    const resp = await fetch('http://localhost:8000/signup',
-
-    {
-        method: 'post',
-        credentials: 'include',
-        headers: {
-            'Content-type': 'Application/json'
-        },
-        body: JSON.stringify({
-           
-        })
-        
-    }
-    
-).then((resp)=>{
-    console.log(resp.json())
-    alert("You have signed up successfully. Please Login!!")
-    toggle()
-    navigate('/auth')
-    
-}).catch((err)=>{
-    alert("Error: " + err);
-})
-
-
-}
+ 
 
     
     const [isActive, setIsActive] = useState(false);
@@ -128,7 +98,10 @@ const UserLogout = () => {
                     
                            
                     </div>
-                    <input type="submit"   value="Submit"/>
+                    <input type="submit" onClick={()=>{
+                        alert("Thank You!!")
+                        navigate('/auth')
+                    }}   value="Submit"/>
                     <p className="signup"><span onClick={toggle}>Back</span></p>
                     </form>
                 </div>
