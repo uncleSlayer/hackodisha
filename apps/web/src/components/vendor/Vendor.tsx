@@ -5,7 +5,9 @@ const Vendor = () => {
   return (
     <div>
         <div>vendor</div>
-        <Link to="/upload"><div>Upload Product</div></Link>
+          <Link to="/upload">
+           <div>Upload Product</div>
+          </Link>
     </div>
   )
 }
