@@ -16,14 +16,14 @@ const Nav = () => {
     console.log(loggedUserEmail)
     let auth = "/auth"
 
-    if(loggedUserEmail.email == ''){
+    if (loggedUserEmail.email == '') {
         auth = '/auth'
-    }else if(loggedUserEmail.log_type=="VENDOR"){
+    } else if (loggedUserEmail.log_type == "VENDOR") {
         auth = "/vendor"
-    }else{
+    } else {
         auth = "/user_logout"
     }
-  
+
 
 
     return (
@@ -46,21 +46,25 @@ const Nav = () => {
                             <img className="navopt_img" src={Carousel} alt="dd" />
                         </div>
                     </Link>
-                    <Link to="/cart">
-                        <div className="navopt flex">
-                            <div className="pretext">Cart</div>
-                            <img className="navopt_img" src={Cart} alt="dd" />
-                        </div>
-                    </Link>
+                    {
+                        loggedUserEmail.email.length > 0 ? (
+                            <Link to="/cart">
+                                <div className="navopt flex">
+                                    <div className="pretext">Cart</div>
+                                    <img className="navopt_img" src={Cart} alt="dd" />
+                                </div>
+                            </Link>) : (<div></div>)
+                    }
+
                     <Link to={auth}>
-                    <div className="navopt flex">
-                        
+                        <div className="navopt flex">
+
                             <div className="pretext">profile</div>
-                            {    
-                                  loggedUserEmail.email.length > 0 ? (<img className='navopt_img' src={User} />) : (<img className='navopt_img' src={UserAdd} />)
+                            {
+                                loggedUserEmail.email.length > 0 ? (<img className='navopt_img' src={User} />) : (<img className='navopt_img' src={UserAdd} />)
                             }
-                        
-                    </div>
+
+                        </div>
                     </Link>
 
 
