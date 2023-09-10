@@ -7,7 +7,7 @@
 }
 
 .categories{
-    height: 180vh;
+    height: auto;
     background: var(--bg-color2);
     display:flex;
     flex-wrap:wrap

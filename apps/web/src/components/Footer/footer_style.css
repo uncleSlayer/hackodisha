@@ -1,0 +1,73 @@
+p{
+    line-height: 2;
+}
+a{
+    color: #f8f7f7;
+    margin: 30px 20px;
+
+  }
+  h2{
+    font-size: 1.5rem;
+    color:  #786106;
+    font-weight: normal;
+    font-weight: bold;
+    margin-top: 50px;
+}
+h3{
+    color:  #765f14;
+}
+  .contact-me{
+    text-align: center;
+  }
+  .Contact_btn {
+    background: var(--bg-color1);
+    /* background-image: -webkit-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -moz-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -ms-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -o-linear-gradient(top, #11CDD4, #11999E);
+    background-image: linear-gradient(to bottom, #11CDD4, #11999E); */
+    -webkit-border-radius: 12;
+    -moz-border-radius: 12;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    margin-bottom: 50px;
+  }
+  
+  .Contact_btn:hover {
+    background: #9b7c0d;
+    /* background-image: -moz-linear-gradient(top, #6b560c, #6b560c);
+    background-image: -webkit-linear-gradient(top, #6b560c, #6b560c);
+    background-image: -ms-linear-gradient(top, #6b560c, #6b560c);
+    background-image: -o-linear-gradient(top, #6b560c, #6b560c);
+    background-image: linear-gradient(to bottom, #6b560c, #6b560c); */
+    text-decoration: none;
+  }
+  .name{
+    padding-bottom: 8px;
+  }
+  .footer-link1:hover{
+    color: #f3ededf2;
+  }
+  .footer-link2:hover{
+    color: #f3ededf2;
+  }
+  .footer-link3:hover{
+    color: #f3ededf2;
+  }
+ .bottom-container{
+    z-index: 101;
+    width: 100%;
+    background-color: var(--bg-color1) ;
+    justify-content: space-between;
+    position:static;
+    top: 0;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+   color: #ffffff;
+   text-align: center;
+  }

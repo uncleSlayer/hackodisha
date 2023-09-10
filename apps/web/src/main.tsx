@@ -8,6 +8,7 @@ import Home from './pages/Home/Home.tsx'
 import Cart from './pages/Cart/cart.tsx'
 import Catalog from './pages/Catalog/Catalog.tsx'
 import Login from './components/SignUp_Login/SingnUpLogin.tsx'
+import Footer from './components/Footer/footer.tsx'
 import Products from './components/Products/Products.tsx'
 import { RecoilRoot } from "recoil"
 import { BrowserRouter } from 'react-router-dom';
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/success' element={<Success />} />
         <Route path='/user_logout' element={<UserLogout/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   </RecoilRoot>,
 )
