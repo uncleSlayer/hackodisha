@@ -100,7 +100,7 @@
 
 .header2{
     
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 600;
     color: var(--bg-color2);
     text-align: left;
@@ -111,7 +111,10 @@
     
     font-size: 1.5rem;
     font-weight: 300;
-    line-height: 2.5rem;
+    line-height: 2rem;
     text-align: left;
+    color: var(--txt-color2);
+}
+.hero-list{
     color: var(--txt-color2);
 }
