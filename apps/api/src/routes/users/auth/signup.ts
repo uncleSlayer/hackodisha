@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 import { prisma } from "database"
 import jwt from "jsonwebtoken"
@@ -46,4 +47,5 @@ signupRouter.post('/signup', async (req, res) => {
     return res.send({
         success: true
     })
+
 })

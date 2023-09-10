@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 import { prisma } from "database"
 import bcrypt from "bcrypt"
@@ -63,5 +64,3 @@ loginRouter.post('/login', async (req, res) => {
                 error: error
             })
         })
-
-})
