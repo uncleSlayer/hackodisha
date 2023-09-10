@@ -60,7 +60,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
   console.log(carousel1)
   return (
     <div className="carousel_container">
-      <div className="imagewraper">
+
+      <div className="imagewraper1">
         <div className="maintextbaner">
             Wooden Sculpture
         </div>
@@ -74,7 +75,7 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-            <div className="">
+          
               
               <Col className='item'>
                 <Product id={product.id} name={product.name}
@@ -85,16 +86,27 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
                   imageUrl={product.imageUrl}
                 />
               </Col>
-            </div>
+            
               
             )
           }
         })}
         
     </Slider>
+    
 
     <div className='card_padding'></div>
-    <div className="imagewraper"></div>
+    
+
+    <div className="imagewraper2">
+        <div className="maintextbaner">
+            shawl
+        </div>
+        <div className="desctextbaner">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, dolorem.
+        </div>
+      </div>
+    
     <Slider {...settings}>
         {carousel2.map((product)=>{
           if(!product){
@@ -122,6 +134,16 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
     </Slider>
 
     <div className='card_padding'></div>
+
+
+    <div className="imagewraper3">
+        <div className="maintextbaner">
+            Silk Rug
+        </div>
+        <div className="desctextbaner">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, dolorem.
+        </div>
+      </div>
 
     <Slider {...settings}>
         {carousel3.map((product)=>{
