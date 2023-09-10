@@ -8,7 +8,7 @@ interface Category {
 }
 const Category:React.FC<Category> = ({category}) => {
   return (
-    <div className='card'><Link to={`/Products/${category}`}>{category}</Link></div>
+    <div className='carddesign'><Link to={`/Products/${category}`}>{category}</Link></div>
   )
 }
   
