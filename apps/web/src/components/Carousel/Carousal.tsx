@@ -69,8 +69,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
                   category={product.category}
                   price={product.price}
                   desc={product.description}
@@ -92,8 +92,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
                   category={product.category}
                   price={product.price}
                   desc={product.description}
@@ -115,8 +115,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
                   category={product.category}
                   price={product.price}
                   desc={product.description}
