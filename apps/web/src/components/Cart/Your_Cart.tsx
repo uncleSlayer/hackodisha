@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react'
 import { cartAtom } from "store"
 import { useRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
+
+import '../../index.css'
 import './style_cart.css'
+
 import { SERVER_IP } from 'configs';
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
@@ -49,7 +52,7 @@ const Your_Cart = () => {
     }, [])
 
     return (
-        <div className='container' style={{}}>
+        <div className='containercart' style={{}}>
 
             <div className='price' >
                 <h2>Price Details:</h2>
@@ -77,72 +80,74 @@ const Your_Cart = () => {
                 }>Proceed to checkout</button>
             </div>
 
-            {/* niche kaam karo */}
+                {/* niche kaam karo */}
+            <div className="flexC">
+                    {cartArrStore.map((cartItem) => {
+                    if (!cartItem) {
+                        return
+                    } else {
+                        const TotalPrice = cartItem.price * cartItem.quantity;
+                        return (
+                            <div className='card' key={cartItem.id}>
+                                {/* <Cart name={cartItem.name}
+                                    imageUrl={cartItem.imageURL}
+                                    price={cartItem.price}
+                                    quantity={cartItem.quantity}
+                                    TotalPrice={TotalPrice}
+                                    id={cartItem.id}
+                                /> */}
 
-            {cartArrStore.map((cartItem) => {
-                if (!cartItem) {
-                    return
-                } else {
-                    const TotalPrice = cartItem.price * cartItem.quantity;
-                    return (
-                        <div className='card' key={cartItem.id}>
-                            {/* <Cart name={cartItem.name}
-                                imageUrl={cartItem.imageURL}
-                                price={cartItem.price}
-                                quantity={cartItem.quantity}
-                                TotalPrice={TotalPrice}
-                                id={cartItem.id}
-                            /> */}
-
-                            <div>
-                                <Card className="" style={{ width: '18rem', marginLeft: '300px', marginTop: '60px' }}>
-                                    <Card.Img variant="top" src={cartItem.imageUrl} />
-                                    <Card.Body>
-                                        <Card.Title> <b>{cartItem.name}</b></Card.Title> <br />
-                                        <Card.Text>
-                                            <h3>Rs:{cartItem.price}</h3>
-                                        </Card.Text>
-                                        <Button onClick={async () => {
-                                            await fetch(
-                                                `${SERVER_IP}cart/remove`,
-                                                {
-                                                    headers: {
-                                                        'Content-type': 'Application/json'
-                                                    },
-                                                    method: 'post',
-                                                    credentials: 'include',
-                                                    body: JSON.stringify({
-                                                        id: cartItem.id
-                                                    })
-                                                }
-                                            )
-                                            fetchCarts()
-                                        }} variant="warning"><b>-</b></Button> <b>Qty : {cartItem.quantity}</b>
-                                        <Button onClick={async () => {
-                                            await fetch(
-                                                `${SERVER_IP}cart`,
-                                                {
-                                                    headers: {
-                                                        'Content-type': 'Application/json'
-                                                    },
-                                                    credentials: 'include',
-                                                    method: 'post',
-                                                    body: JSON.stringify({
-                                                        id: cartItem.productId
-                                                    })
-                                                }
-                                            )
-                                            fetchCarts()
-                                        }} variant="warning"><b>+</b></Button>
-                                    </Card.Body>
-                                </Card>
+                                <div>
+                                    
+                                        <Card.Img variant="top" className="imagecard" src={cartItem.imageUrl} />
+                                        <Card.Body>
+                                            <Card.Title> <b>{cartItem.name}</b></Card.Title> <br />
+                                            <Card.Text>
+                                                <h3>{cartItem.price}₹</h3>
+                                            </Card.Text>
+                                            <Button onClick={async () => {
+                                                await fetch(
+                                                    `${SERVER_IP}cart/remove`,
+                                                    {
+                                                        headers: {
+                                                            'Content-type': 'Application/json'
+                                                        },
+                                                        method: 'post',
+                                                        credentials: 'include',
+                                                        body: JSON.stringify({
+                                                            id: cartItem.id
+                                                        })
+                                                    }
+                                                )
+                                                fetchCarts()
+                                            }} variant="warning"><b>-</b></Button> 
+                                            <b>&#9; &#9;Qty : {cartItem.quantity} &#9; &#9;</b>
+                                            <Button onClick={async () => {
+                                                await fetch(
+                                                    `${SERVER_IP}cart`,
+                                                    {
+                                                        headers: {
+                                                            'Content-type': 'Application/json'
+                                                        },
+                                                        credentials: 'include',
+                                                        method: 'post',
+                                                        body: JSON.stringify({
+                                                            id: cartItem.productId
+                                                        })
+                                                    }
+                                                )
+                                                fetchCarts()
+                                            }} variant="warning"><b>+</b></Button>
+                                        </Card.Body>
+                                
+                                </div>
+                            
                             </div>
-                            <br>
-                            </br>
-                        </div>
-                    )
-                }
-            })}
+                        )
+                    }
+                })}
+            </div>
+            
         </div>
 
     )
