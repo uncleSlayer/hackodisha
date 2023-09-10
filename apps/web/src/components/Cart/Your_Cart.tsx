@@ -19,7 +19,7 @@ const Your_Cart = () => {
         price: 0,
         quantity: 0,
         productId: 0,
-        imageURL: ''
+        imageUrl: ''
     }[]>(cartAtom)
     const navigate = useNavigate()
 
@@ -96,7 +96,7 @@ const Your_Cart = () => {
 
                             <div>
                                 <Card className="" style={{ width: '18rem', marginLeft: '300px', marginTop: '60px' }}>
-                                    <Card.Img variant="top" src={cartItem.imageURL} />
+                                    <Card.Img variant="top" src={cartItem.imageUrl} />
                                     <Card.Body>
                                         <Card.Title> <b>{cartItem.name}</b></Card.Title> <br />
                                         <Card.Text>
