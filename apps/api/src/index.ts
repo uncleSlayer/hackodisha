@@ -11,6 +11,7 @@ import { fetchCart } from './routes/users/cart/fetchCart'
 import { orderRouter } from "./routes/users/order/order";
 import { stripeRouter } from "./routes/users/order/stripe";
 import { logoutRouter } from "./routes/users/auth/logout";
+import { vendorUserRouter } from "./routes/vendors/user/user";
 
 
 const app = express()
@@ -32,6 +33,7 @@ app.use(productRouter)
 app.use(cartRouter)
 app.use(stripeRouter)
 app.use(logoutRouter)
+app.use(vendorUserRouter)
 
 app.use(fetchCart)
 
