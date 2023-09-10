@@ -8,11 +8,10 @@ export const cartRouter = Router()
 cartRouter.post('/cart', async (req, res) => {
 
     const productId: number = req.body.id
-   
-
-
     const token = req.cookies.token
     const email = JWT.verify(token, JWT_SECRET)
+
+    console.log(productId)
 
     const user = await prisma.user.findFirst({
         where: {
@@ -45,25 +44,26 @@ cartRouter.post('/cart', async (req, res) => {
     })
 
     const cart = await prisma.cartItem.findFirst({
-        where:{
-            productId:product?.id
+        where: {
+            productId: product?.id
         }
     })
 
-    if(cart){
+    if (cart) {
         await prisma.cartItem.update({
-            where:{
+            where: {
+                productId: productId,
                 id: cart.id
             },
             data: {
-                quantity: cart.quantity+1
+                quantity: cart.quantity + 1
             }
-            
+
         })
 
         return res.send({
             message: "Item added to cart"
-        }) 
+        })
     }
 
     if (typeof product?.id !== 'number') {
@@ -123,8 +123,11 @@ cartRouter.post('/cart/delete', async (req, res) => {
 })
 
 cartRouter.post('/cart/remove', async (req, res) => {
-    const itemId = req.body.itemId
+    const itemId = req.body.id
     const token = req.cookies.token
+
+    console.log(token);
+
 
     const userEmail = JWT.verify(token, JWT_SECRET)
 
@@ -152,13 +155,13 @@ cartRouter.post('/cart/remove', async (req, res) => {
         })
     }
 
-    if(cartItem.quantity == 1){
+    if (cartItem.quantity == 1) {
         await prisma.cartItem.delete({
             where: {
                 id: cartItem.id,
                 userId: user?.id
             },
-    
+
         })
 
         return res.send({

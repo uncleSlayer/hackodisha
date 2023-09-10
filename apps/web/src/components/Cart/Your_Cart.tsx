@@ -46,45 +46,46 @@ const Your_Cart = () => {
     }[]>([])
     return (
         <div className='container' style={{}}>
-        
+
             <div className='price' >
                 <h2>Price Details:</h2>
                 <hr /><br />
                 <table>
                     <tr>
-                    <th>
-                    <td><h4>Price (9 items):</h4></td>
-                    </th>
                         <th>
-                          <td><h4>5000</h4></td> 
+                            <td><h4>Price (9 items):</h4></td>
+                        </th>
+                        <th>
+                            <td><h4>5000</h4></td>
                         </th>
                     </tr>
                     <tr>
                         <th>
-                        <td><h4>Total Price:</h4></td>
-                          </th>
-                          <th><td><h4> 1000</h4></td></th>
+                            <td><h4>Total Price:</h4></td>
+                        </th>
+                        <th><td><h4> 1000</h4></td></th>
                     </tr>
                 </table>
                 <hr />
-             <button className='Btn' onClick={() => {
-                navigate('/checkout/address')
-              }
-              }>Proceed to checkout</button>
+                <button className='Btn' onClick={() => {
+                    navigate('/checkout/address')
+                }
+                }>Proceed to checkout</button>
             </div>
-        
+
             {cartArray.map((cartItem) => {
                 if (!cartItem) {
                     return
                 } else {
-                    const TotalPrice= cartItem.price * cartItem.quantity;
+                    const TotalPrice = cartItem.price * cartItem.quantity;
                     return (
                         <div className='card' key={cartItem.id}>
                             <Cart name={cartItem.name}
                                 imageUrl={cartItem.imageUrl}
                                 price={cartItem.price}
                                 quantity={cartItem.quantity}
-                                TotalPrice={TotalPrice}   
+                                TotalPrice={TotalPrice}
+                                id={cartItem.id}
                             />
                             <br>
                             </br>
