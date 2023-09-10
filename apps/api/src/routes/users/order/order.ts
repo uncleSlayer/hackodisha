@@ -1,7 +1,8 @@
-import { Router } from "express";
+import e, { Router } from "express";
 import JWT from "jsonwebtoken"
 import { JWT_SECRET } from "configs";
 import { prisma } from "database";
+import { log } from "console";
 
 export const orderRouter = Router()
 
@@ -79,4 +80,56 @@ orderRouter.post('/order/create', async (req, res) => {
     return res.send({
         message: 'success'
     })
+})
+
+orderRouter.post('/myorders', async (req, res) => {
+    const token = req.cookies.token
+    const email = JWT.verify(token, JWT_SECRET)
+    const user = await prisma.user.findFirst({
+        where: {
+            email: email.toString()
+        },
+        include: {
+            Cart: true
+        }
+    })
+
+    // const cartItems = user?.Cart
+
+    const cartItems = await prisma.cartItem.findMany({
+        where: {
+            userId: user?.id,
+            // status: 'ALIVE'
+        }
+    })
+
+    const cartItemsArr: any = []
+
+    if (cartItems && cartItems?.length > 0) {
+        for (let i = 0; i < cartItems?.length; i++) {
+            cartItemsArr.push(cartItems[i])
+        }
+    }
+
+    const productItemsArr: any = []
+
+    if (cartItemsArr && cartItemsArr.length > 0) {
+        for (let i = 0; i < cartItemsArr.length; i++) {
+            productItemsArr.push(
+                await prisma.product.findFirst({
+                    where: {
+                        id: cartItemsArr[i].productId
+                    }
+                })
+            )
+        }
+    }
+
+    return res.send({
+        orderDetails: cartItemsArr,
+        productDetails: productItemsArr
+    })
+
+
+
 })
