@@ -13,7 +13,14 @@ import { MouseEvent } from 'react';
 
 const Your_Cart = () => {
 
-    const [cartArrStore, setCartArrStore] = useRecoilState(cartAtom)
+    const [cartArrStore, setCartArrStore] = useRecoilState<{
+        id: 0,
+        name: '',
+        price: 0,
+        quantity: 0,
+        productId: 0,
+        imageURL: ''
+    }[]>(cartAtom)
     const navigate = useNavigate()
 
     const fetchCarts = () => {
