@@ -1,7 +1,7 @@
 import '../../index.css'
 import './nav.css'
 
-import Logo from '../../assets/pitcher.png'
+import Logo from '../../assets/pitcher.jpeg'
 import Cart from '../../assets/cart.png'
 import User from '../../assets/user.png'
 import UserAdd from '../../assets/useradd.png'
@@ -31,9 +31,9 @@ const Nav = () => {
             <div className="nav_container flex">
                 <Link to="/">
                     <div className="logo_container flex ">
-                        <h1 className="logotxt">H</h1>  {/*handy pots.co */}
+                        {/* <h1 className="logotxt">H</h1>  handy pots.co */}
                         <img className="logo" src={Logo} alt="dd" />
-                        <h1 className="logotxt">.</h1>
+                        {/* <h1 className="logotxt">.</h1> */}
                     </div>
                 </Link>
 

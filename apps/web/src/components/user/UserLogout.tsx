@@ -45,12 +45,7 @@ const UserLogout = () => {
                 }
                 else{
                     setLoggedUser({email : "",log_type:""})
-                    setCart({id: 0,
-        name: '',
-        price: 0,
-        quantity: 0,
-        productId: 0,
-        imageURL: ''})
+                    
                     navigate('/auth')
                 } 
             }).catch((err)=>{
