@@ -46,6 +46,7 @@ const Your_Cart = () => {
                 setCartArrStore(resp.shoppingCart)
             })
     }
+    console.log(typeof(cartArrStore))
 
     useEffect(() => {
         fetchCarts()
