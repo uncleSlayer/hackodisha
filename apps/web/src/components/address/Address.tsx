@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import { cartAtom } from "store"
 import { MouseEvent } from 'react'
 import { SERVER_IP } from 'configs'
+import "./Address_style.css"
 
 const Address = () => {
 
@@ -15,30 +16,34 @@ const Address = () => {
     const [pin, setPin] = useState('')
 
     return (
-        <div>
-            <form action="">
-                <p>House No</p>
-                <input type="text" value={houseNo} onChange={(e) => setHouseNo(e.target.value)} />
+        <div className='div1'>
+            <div className='div2'>
+                <div className='user'>
+                    <div className='formBox'>
+            <form className='frm' action="">
+                <h2>Address</h2>
+                <p></p>
+                <input type="text" placeholder='House No' value={houseNo} onChange={(e) => setHouseNo(e.target.value)} />
 
-                <p>City</p>
-                <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+                <p></p>
+                <input type="text" placeholder='City' value={city} onChange={(e) => setCity(e.target.value)} />
 
-                <p>state</p>
-                <input type="text" value={addressState} onChange={(e) => setAddressState(e.target.value)} />
+                <p></p>
+                <input type="text" placeholder='State' value={addressState} onChange={(e) => setAddressState(e.target.value)} />
 
-                <p>country</p>
-                <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
+                <p></p>
+                <input type="text" placeholder='Country' value={country} onChange={(e) => setCountry(e.target.value)} />
 
-                <p>pin</p>
-                <input type="number" value={pin} onChange={(e) => setPin(e.target.value)} />
+                <p></p>
+                <input type="number" placeholder='pin' value={pin} onChange={(e) => setPin(e.target.value)} />
 
-                <p>Phone</p>
-                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <p></p>
+                <input type="text" placeholder='Phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
 
                 <br />
                 <br />
 
-                <button onClick={(e) => {
+                <button className='Btn bttn' onClick={(e) => {
                     e.preventDefault()
                     fetch(
                         `${SERVER_IP}pay`,
@@ -70,6 +75,9 @@ const Address = () => {
 
                 }}> Proceed to checkout </button>
             </form>
+            </div>
+            </div>
+            </div>
         </div>
     )
 }
