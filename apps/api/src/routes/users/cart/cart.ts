@@ -88,6 +88,7 @@ cartRouter.post('/cart', async (req, res) => {
 
 })
 
+// delete item api
 cartRouter.post('/cart/delete', async (req, res) => {
     const cartItemId = req.body.id
     const token = req.cookies.token
@@ -122,6 +123,7 @@ cartRouter.post('/cart/delete', async (req, res) => {
     })
 })
 
+// remove item api
 cartRouter.post('/cart/remove', async (req, res) => {
     const itemId = req.body.id
     const token = req.cookies.token
@@ -142,6 +144,8 @@ cartRouter.post('/cart/remove', async (req, res) => {
             id: itemId
         }
     })
+
+    console.log(cartItem)
 
     if (!cartItem) {
         return res.send({
@@ -172,7 +176,7 @@ cartRouter.post('/cart/remove', async (req, res) => {
     await prisma.cartItem.update({
         where: {
             cartUser: user,
-            id: itemId
+            id: cartItem.id
         },
 
         data: {

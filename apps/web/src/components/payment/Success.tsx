@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Success = () => {
+    const navigate = useNavigate()
     const param = new URLSearchParams(location.search)
 
     const houseNo = param.get('houseno')
@@ -39,11 +41,16 @@ const Success = () => {
             })
             .then((resp) => {
                 console.log(resp)
+                setTimeout(() => {
+                    navigate('/')
+                }, 5000);
             })
     }, [])
 
     return (
-        <div style={{ marginTop: '200px' }}>Success</div>
+        <div style={{ marginTop: '200px' }}>
+            <p>Please don't cose this page or go back. We are creating your order.</p>
+        </div>
     )
 }
 
