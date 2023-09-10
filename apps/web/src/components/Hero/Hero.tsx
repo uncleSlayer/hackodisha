@@ -8,8 +8,8 @@ const Hero = () => {
     <div className="hero_container">
         <div className="relative">
         <div id="panel1" className="section1 flex">
-            <p className="header">Lorem ipsum dolor sit, amet Dignissimos, optio?</p>
-            <p className="subtxt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta ipsam odit qui quaerat expedita provident fuga vitae, minima ipsum quia?</p>
+            <p className="header">Welcome to the Local Lane</p>
+            <p className="subtxt">In the rapidly evolving digital age, local traders and vendors in India face a significant challenge – the shift to online markets. While e-commerce presents new opportunities, it also poses a threat to the rich culture and heritage of India. To address this challenge and protect the hard work of local artisans and traders, we have <b>The Local Lane</b></p>
         </div>
         </div>
         
