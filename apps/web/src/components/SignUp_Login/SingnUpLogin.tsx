@@ -50,7 +50,7 @@ const Login = () => {
                     navigate('/auth')
                 }
                 else{
-                    setLoggedUser({email : resp.email})
+                    setLoggedUser({email : resp.email,log_type:resp.role})
                     console.log("s2:" + loggedUser)
                     if(resp.role == "USER") navigate('/')
                     else navigate('/vendor')
@@ -105,7 +105,7 @@ const Login = () => {
     
 ).then((resp)=>{
     console.log(resp.json())
-    alert("You have signed in successfully. Please Login!!")
+    alert("You have signed up successfully. Please Login!!")
     toggle()
     navigate('/auth')
     

@@ -49,8 +49,11 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 3,
-  slidesToScroll: 1,
   centerMode: true,
+  draggable:true,
+  swipeToSlide:true,
+  autoplay:true,
+  autoplaySpeed:1500,
 };
 
 
@@ -75,10 +78,10 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-          
-              
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
+
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
+
                   category={product.category}
                   price={product.price}
                   desc={product.description}
@@ -113,20 +116,17 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-              <div className="">
-                  
-                  <Col className='item'>
-                    <Product id={product.id} name={product.name}
-                      category={product.category}
-                      price={product.price}
-                      desc={product.description}
-                      quantity={product.quantity}
-                      imageUrl={product.imageUrl}
-                    />
-                  </Col>
 
-              </div>
-             
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
+                  category={product.category}
+                  price={product.price}
+                  desc={product.description}
+                  quantity={product.quantity}
+                  imageUrl={product.imageUrl}
+                />
+              </Col>
+
             )
           }
         })}
@@ -151,8 +151,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
             return
           }else{
             return(
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
+              <Col className='item' key={product.id}>
+                <Product  id={product.id} name={product.name}
                   category={product.category}
                   price={product.price}
                   desc={product.description}
