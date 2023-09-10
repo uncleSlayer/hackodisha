@@ -5,7 +5,26 @@ import { useState } from 'react'
 const Vendordo = () => {
 
 
-    const [vendorData, setVendorData] = useState<any>([])
+    const [vendorData, setVendorData] = useState({
+        Product: [
+            {
+                id: '',
+                name: '',
+                category: '',
+                description: '',
+                imageUrl: '',
+                price: 0,
+                quantity: '',
+                userId: 0
+            }
+        ],
+        email: '',
+        hashedPass: '',
+        id: 0,
+        name: 'test',
+        phone: '',
+        role: ''
+    })
 
     useEffect(() => {
         fetch(
@@ -18,14 +37,29 @@ const Vendordo = () => {
                 return resp.json()
             })
             .then((resp) => {
-                setVendorData(resp)
+                setVendorData(resp.vendor)
                 console.log(resp)
             })
     }, [])
 
     return (
         <div style={{ marginTop: '200px' }}>
-            venda
+            <p> welcome {vendorData.name}, your email is: {vendorData.email} </p>
+
+            <p>Your uploaded products</p>
+
+            {
+                vendorData.Product.map((item) => {
+                    return (
+                        <>
+                            <div>{item.name}</div>
+                            <img style={{ width: '120px', height: '120px' }} src={item.imageUrl} alt="" />
+                            <div>{item.price}</div>
+                            <span>quantity: </span> <span>{item.quantity}</span>
+                        </>
+                    )
+                })
+            }
         </div>
     )
 }
