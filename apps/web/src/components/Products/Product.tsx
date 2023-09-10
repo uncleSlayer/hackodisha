@@ -25,7 +25,7 @@ const Product: React.FC<Product> = ({ name, category, price ,desc, imageUrl }) =
 
           {desc}
         </Card.Text>
-        <Button className="cartbutton">+</Button>   
+        <Button className="cartbutton">Add to Cart</Button>   
         <b>Price:Rs{price}</b>
       </Card.Body>
     </Card>

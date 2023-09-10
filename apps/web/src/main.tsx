@@ -10,6 +10,7 @@ import Catalog from './pages/Catalog/Catalog.tsx'
 import Login from './components/SignUp_Login/SingnUpLogin.tsx'
 import Signup from './components/auth/Signup.tsx'
 import Products from './components/Products/Products.tsx'
+import Footer from './components/Footer/footer.tsx'
 import { RecoilRoot } from "recoil"
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom'
@@ -40,6 +41,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         {/* http://localhost:5173/success/?houseno=${orderAddress.houseNumber}&city=${orderAddress.cityAddr}&state=${orderAddress.stateAddr}&pin=${orderAddress.pinAddr}&phone=${orderAddress.phone}&country=${orderAddress.country}` */}
         <Route path='/success' element={<Success />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   </RecoilRoot>,
 )
