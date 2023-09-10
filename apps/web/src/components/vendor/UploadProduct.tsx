@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { MouseEvent } from "react"
 import Select from "react-select"
+import './upload_style.css'
 
 const UploadProduct = () => {
     const [productName, setProductName] = useState('')
@@ -62,14 +63,18 @@ const UploadProduct = () => {
 
 
     return (
-        <div>
-            <form action="">
-                <p>Product Name</p>
-                <input type="text" className="border" value={productName} onChange={(e) => setProductName(e.target.value)} />
+        <div className='div1'>
+            <div className='div2'>
+                <div className='user'>
+                    <div className='formBox'>
+            <form className='frm' action="">
+                <h2>Upload Your Product</h2>
+            <p></p>
+                <input type="text" placeholder="Product Name" className="border" value={productName} onChange={(e) => setProductName(e.target.value)} />
 
-                <p>Select a Category</p>
-                <select value={category} onChange={handleCategory}>
-                    <option value="Other">Other</option>
+                <p></p>
+                <select className="select"  value={category} onChange={handleCategory}>
+                    <option value="Other">--Select a Category--</option>
                     <option value="Sambalpuri_Saree">Sambalpuri_Saree</option>
                     <option value="Banarasi_Saree">Banarasi_Saree</option>
                     <option value="Silk_Saree">Silk_Saree</option>
@@ -96,15 +101,12 @@ const UploadProduct = () => {
 
                 </select>
 
-                <p>Price</p>
-                <input type="number" className="border" value={price} onChange={(e) => setPrice(+e.target.value)} />
+                {/* <span>Price</span> */}
+                <input type="number" placeholder="Price" className="border" value={price} onChange={(e) => setPrice(+e.target.value)} />
 
-                <p>Desciption</p>
-                <input type="text" className="border" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                <input type="text" placeholder="Desciption" className="border" value={desc} onChange={(e) => setDesc(e.target.value)} />
 
-
-                <p>Quantity</p>
-                <input type="number" className="border" value={quantity} onChange={(e) => setQuantity(+e.target.value)} />
+                <input type="number" placeholder="Quantity" className="border" value={quantity} onChange={(e) => setQuantity(+e.target.value)} />
 
                 {/* <p>Image</p>
                 <input type="file" onChange={(e: React.FormEvent) => {
@@ -119,8 +121,11 @@ const UploadProduct = () => {
                 <br />
                 <br />
 
-                <button onClick={handleProdUploadBtn}>ok</button>
+                <button className="Btn bttn" style={{top:'500px'}} onClick={handleProdUploadBtn}>Click to Upload</button>
             </form>
+            </div>
+            </div>
+            </div>
         </div>
     )
 }
