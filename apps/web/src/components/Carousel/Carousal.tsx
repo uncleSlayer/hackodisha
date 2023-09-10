@@ -60,12 +60,22 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
   console.log(carousel1)
   return (
     <div className="carousel_container">
+      <div className="imagewraper">
+        <div className="maintextbaner">
+            Wooden Sculpture
+        </div>
+        <div className="desctextbaner">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, dolorem.
+        </div>
+      </div>
       <Slider {...settings}>
         {carousel1.map((product)=>{
           if(!product){
             return
           }else{
             return(
+            <div className="">
+              
               <Col className='item'>
                 <Product id={product.id} name={product.name}
                   category={product.category}
@@ -75,6 +85,8 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
                   imageUrl={product.imageUrl}
                 />
               </Col>
+            </div>
+              
             )
           }
         })}
@@ -82,22 +94,27 @@ const Carousal: React.FC<Carousel> = ({ carousel1, carousel2, carousel3 }) => {
     </Slider>
 
     <div className='card_padding'></div>
-
+    <div className="imagewraper"></div>
     <Slider {...settings}>
         {carousel2.map((product)=>{
           if(!product){
             return
           }else{
             return(
-              <Col className='item'>
-                <Product id={product.id} name={product.name}
-                  category={product.category}
-                  price={product.price}
-                  desc={product.description}
-                  quantity={product.quantity}
-                  imageUrl={product.imageUrl}
-                />
-              </Col>
+              <div className="">
+                  
+                  <Col className='item'>
+                    <Product id={product.id} name={product.name}
+                      category={product.category}
+                      price={product.price}
+                      desc={product.description}
+                      quantity={product.quantity}
+                      imageUrl={product.imageUrl}
+                    />
+                  </Col>
+
+              </div>
+             
             )
           }
         })}
