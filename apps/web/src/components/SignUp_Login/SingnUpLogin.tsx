@@ -144,13 +144,13 @@ const Login = () => {
             <div className="user signupBx">
                 <div className="formBx">
                     <form className="f"action="">
-                    <h2>Create an Account</h2>
+                    <h2 className="header">Create an Account</h2>
                     <input type="text" placeholder="Email" value={Email} onChange={(e) => setmail(e.target.value)}/>
                     <input type="text" placeholder="Username"  value={name} onChange={(e) => setName(e.target.value)}/> 
                     <input type="number" placeholder="Phone" className="border" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     <input type="password" placeholder="Create Password" value={Pass} onChange={(e) => setPassword(e.target.value)}/>
                     <input type="password" placeholder="Confirm Password" value={rePass} onChange={(e) => setRePass(e.target.value)}/>
-                    <div>
+                    <div className="type">
                     
                             <label className="radio_container">User <input type="radio" id="User"
                                 onChange={handleChangeRole}
@@ -162,8 +162,9 @@ const Login = () => {
                     </div>
                     <input type="submit" onClick={(e)=>{
                         handleSignUpBtn(e);
-                    }}  value="SignUp"/>
-                    <p className="signup">already have an account? <span onClick={toggle}>Sign in.</span></p>
+                    }}  value="Sign Up"/>
+                    <div className="signin">already have an account? <span onClick={toggle}>Sign In</span></div>
+                    
                     </form>
                 </div>
                 <div className="imgBx"><img src={SignupLogo}/></div>

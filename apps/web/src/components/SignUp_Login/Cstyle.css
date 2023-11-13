@@ -1,6 +1,8 @@
 
 
-
+.header{
+    margin-top: 0;
+}
 
 .section {
     position: relative;
@@ -180,7 +182,33 @@
 
 }
 
+.section .container .user .formBx .signin {
+    position: relative;
+
+   
+
+    font-size: 12px;
+
+    Letter-spacing: 1px;
+
+    color: #555;
+
+    text-transform: uppercase;
+
+    font-weight: 300;
+
+}
+
 .section .container .user .formBx .signup span {
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: var(--bg-color1);
+    cursor: pointer;
+}
+
+.section .container .user .formBx .signin span {
     font-weight: 600;
 
     text-decoration: none;
@@ -236,4 +264,9 @@
 .radio_container{
     display: flex;
     align-items: flex-start;
+}
+
+.type{
+    display: flex;
+    justify-content: space-around;
 }

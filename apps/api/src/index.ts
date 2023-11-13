@@ -40,4 +40,31 @@ app.use(fetchCart)
 app.use(orderRouter)
 
 
+// This code backsup data prom database to json file
+// import { prisma } from "database";
+// const fs = require('fs');
+// const path = require('path')
+// app.get('/exportAddress', async (req, res) => {
+//     try {
+//       // Replace 'your_table' with the name of your PostgreSQL table
+      
+  
+//       // Fetch data from PostgreSQL
+//       const data = await prisma.address.findMany();
+  
+//       // Specify the file path and name
+//       const filePath = path.join(__dirname, 'exportedAddress.json')
+  
+//       // Write data to the file
+//       fs.writeFileSync(filePath, JSON.stringify(data));
+  
+//       // Send a success response
+//       res.status(200).json({ message: 'Data exported successfully' });
+//     } catch (error) {
+//       console.error('Error exporting data:', error);
+//       res.status(500).json({ message: 'Internal server error' });
+//     }
+//   });
+
+
 app.listen(8000, () => console.log('listening on port 8000'))
