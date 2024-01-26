@@ -223,7 +223,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='home'>
       <Hero />
       {/* <Search /> */}
       <Carousal carousel1={carosel1} carousel2={carosel2} carousel3={carosel3} carousel4={carosel4} carousel5={carosel5} />

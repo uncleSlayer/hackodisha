@@ -40,9 +40,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/checkout/address' element={<Address />} />
         {/* http://localhost:5173/success/?houseno=${orderAddress.houseNumber}&city=${orderAddress.cityAddr}&state=${orderAddress.stateAddr}&pin=${orderAddress.pinAddr}&phone=${orderAddress.phone}&country=${orderAddress.country}` */}
         <Route path='/success' element={<Success />} />
-        <Route path='/user_logout' element={<UserLogout/>} />
+        <Route path='/user_logout' element={<UserLogout />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   </RecoilRoot>,
 )
